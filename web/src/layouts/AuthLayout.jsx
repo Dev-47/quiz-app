@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import BaseLayout from "./BaseLayout";
 
 export default function AuthLayout({ children, pgtitle }) {
+  
+  // content to show in the login page
   const loginCont = (
     <>
       <p>
@@ -22,6 +24,7 @@ export default function AuthLayout({ children, pgtitle }) {
     </>
   );
 
+  // content to show in the signup page
   const signupCont = (
     <p>
       Already have an account?{" "}
@@ -31,6 +34,7 @@ export default function AuthLayout({ children, pgtitle }) {
     </p>
   );
 
+  // array of content to show in the auth pages
   const extra = [
     {
       title: "Login",
@@ -46,8 +50,10 @@ export default function AuthLayout({ children, pgtitle }) {
     },
   ];
 
+  // usestate to show the content in the auth pages
   const [item, setItem] = useState({});
 
+  // useEffect to the show content according to the page title props
   useEffect(() => {
     extra
       .filter((item) => item.title === pgtitle)
@@ -56,6 +62,12 @@ export default function AuthLayout({ children, pgtitle }) {
       });
   }, []);
 
+  // prevent the default action of the form
+  const preventDefault = (e) => {
+    e.preventDefault();
+  };
+
+  // react default return
   return (
     <BaseLayout>
       <div className="text-white grid w-full body-font">
@@ -64,7 +76,7 @@ export default function AuthLayout({ children, pgtitle }) {
         </h2>
 
         <div className="w-full">
-          <form className="auth-form">
+          <form className="auth-form" onSubmit={preventDefault}>
             {children}
             <button className="authBtn">{pgtitle}</button>
           </form>
