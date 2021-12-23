@@ -10,6 +10,8 @@ pillow = "*"
 django-cors-headers = "*"
 whitenoise = "*"
 djangorestframework-simplejwt = "*"
+ipython = "*"
+django-rest-swagger = "*"
 
 [dev-packages]
 
