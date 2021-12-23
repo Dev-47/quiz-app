@@ -1,12 +1,18 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Test from "../pages/Test";
+import Index from "../pages/Index";
+import SignIn from "../pages/auth/SignIn";
+import SignUp from "../pages/auth/SignUp";
+import ResetPassword from "../pages/auth/ResetPassword";
 
 export default function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Test />} />
+      <Route path="/" element={<Index />} />
+      <Route path="/sign-in" element={<SignIn />} />
+      <Route path="/sign-up" element={<SignUp />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
     </Routes>
   );
 }
