@@ -19,6 +19,7 @@ urlpatterns = [
     # jwt token endpoints
     path("accounts/login/", TokenObtainPairView.as_view(), name="login"),
     path("accounts/refresh-token/", TokenRefreshView.as_view(), name="refresh-token"),
+    path("accounts/logout/", LogoutUserAPI.as_view(), name="logout"),
     path("accounts/register/", RegisterUserAPI.as_view(), name="register"),
     path("accounts/logout/", LogoutUserAPI.as_view(), name="logout"),
     path("accounts/dashboard/", DashboardUserAPI.as_view(), name="dashboard"),
