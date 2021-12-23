@@ -9,6 +9,7 @@ django-rest-framework = "*"
 pillow = "*"
 django-cors-headers = "*"
 whitenoise = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 
