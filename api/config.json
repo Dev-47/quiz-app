@@ -1,0 +1,4 @@
+{
+    "SECRET_KEY": "django-insecure-*$d(8yk#ct1ospx@fg13df0xb@(-9)l^%%*v#$!r0y5&)%+9&w",
+    "ALLOWED_HOSTS": ["*"]
+}
