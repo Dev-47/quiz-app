@@ -1,3 +1,11 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@import "utilities.scss";
+
+.body {
+    font-family: "Lato", sans-serif;
+}
+
+@import "auth.scss";
