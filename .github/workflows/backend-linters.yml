@@ -39,7 +39,7 @@ jobs:
 
     - name: Fetching changes from remote url on HTTPS
       run: |
-        git remote add origin https://github.com/Dev-47/quiz-app.git
+        git remote add set-url https://github.com/Dev-47/quiz-app.git
         git pull origin main
 
     - name: Check for changes
