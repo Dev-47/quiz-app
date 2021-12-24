@@ -1,4 +1,4 @@
-name: Python lint
+name: Python Lint
 
 on: [push, pull_request]
 
@@ -38,7 +38,7 @@ jobs:
         git config user.name "Dev 47 Pilot"
 
     - name: Switching from HTTPS to SSH
-      run: git remote set-url origin git@github.com:Dev-47/quiz-app.git
+      run: git remote set-url origin https://github.com/Dev-47/quiz-app.git
 
     - name: Check for changes
       run: git status
