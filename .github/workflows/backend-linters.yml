@@ -37,8 +37,10 @@ jobs:
         git config user.email "dev-47.pilot@dev-47.com"
         git config user.name "Dev 47 Pilot"
 
-    - name: Switching from HTTPS to SSH
-      run: git remote set-url origin https://github.com/Dev-47/quiz-app.git
+    - name: Fetching changes from remote url on HTTPS
+      run: |
+        git remote set-url origin https://github.com/Dev-47/quiz-app.git
+        git pull origin main
 
     - name: Check for changes
       run: git status
@@ -52,11 +54,6 @@ jobs:
     - name: Commit changed files
       run: |
         git commit -m "GH-ACTIONS / updates new linted files"
-      working-directory: ${{env.working-dir}}
-
-    - name: Fetch from main
-      run: |
-        git fetch origin main
       working-directory: ${{env.working-dir}}
 
     - name: Push code to main
