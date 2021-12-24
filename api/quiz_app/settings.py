@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "rest_framework_swagger",
     # project apps
     "accounts",
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
@@ -154,3 +155,21 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+
+SWAGGER_SETTINGS = {
+    'USE_SESSION_AUTH': False,
+    'relative_paths': False,
+    "DISPLAY_OPERATION_ID": False,
+    'SECURITY_DEFINITIONS': {
+        'Basic': {
+            'type': 'basic'
+        },
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        }
+    },
+}
