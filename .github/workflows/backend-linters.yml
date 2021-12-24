@@ -28,6 +28,11 @@ jobs:
       run: |
         black . -v
       working-directory: ${{env.working-dir}}
+      
+    - name: Setting Identify for Git
+      run: |
+        git config user.email "dev-47.pilot@dev-47.com"
+        git config user.name "Dev 47 Pilot"
     
     - name: Switching from HTTPS to SSH
       run: git remote set-url origin ${{ secrets.SSH_REPO_URL }}
