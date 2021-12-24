@@ -28,3 +28,26 @@ jobs:
       run: |
         black . -v
       working-directory: ${{env.working-dir}}
+    
+    - name: Switching from HTTPS to SSH
+      run: git remote set-url origin ${{ secrets.SSH_REPO_URL }}
+
+    - name: Check for changes
+      run: git status
+      working-directory: ${{env.working-dir}}
+
+    - name: Stage changed files
+      run: git add .
+      working-directory: ${{env.working-dir}}
+
+    - name: Commit changed files
+      run: git commit -m "GH-ACTIONS / updates new linted files"
+      working-directory: ${{env.working-dir}}
+
+    - name: Fetch from main
+      run: git fetch origin main
+      working-directory: ${{env.working-dir}}
+
+    - name: Push code to main
+      run: git push origin HEAD:main
+      working-directory: ${{env.working-dir}}
