@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import BaseLayout from "./BaseLayout";
 
 export default function AuthLayout({ children, pgtitle }) {
-  
   // content to show in the login page
   const loginCont = (
     <>
@@ -46,7 +45,7 @@ export default function AuthLayout({ children, pgtitle }) {
     },
     {
       title: "Reset Password",
-      cont: <div className="hidden border-black border-2">hello</div>,
+      cont: null,
     },
   ];
 
@@ -71,14 +70,14 @@ export default function AuthLayout({ children, pgtitle }) {
   return (
     <BaseLayout>
       <div className="text-white grid w-full body-font">
-        <h2 className="col-span-2 grid place-content-center text-2xl font-bold underline decoration-2 m-4">
+        <h2 className="sm:col-span-2 grid place-content-center text-2xl font-bold underline decoration-2 m-4">
           {pgtitle}
         </h2>
 
         <div className="w-full">
           <form className="auth-form" onSubmit={preventDefault}>
             {children}
-            <button className="authBtn">{pgtitle}</button>
+            <button className="auth-btn">{pgtitle}</button>
           </form>
         </div>
 
