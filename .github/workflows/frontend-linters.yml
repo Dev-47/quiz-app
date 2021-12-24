@@ -1,0 +1,32 @@
+name: JavaScript Lint
+
+# This action works with pull requests and pushes
+on:
+  pull_request:
+  push:
+    branches:
+    - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    env:
+      working-dir: ./web
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node.JS
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install prettier
+      run: |
+        npm install --save-dev --save-exact prettier
+      working-directory: ${{env.working-dir}}
+    
+    - name: Run linting
+      run: |
+        npx prettier --write .
