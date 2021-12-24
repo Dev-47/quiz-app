@@ -50,9 +50,9 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
     "rest_framework_swagger",
+    "drf_yasg",
     # project apps
     "accounts",
-    'drf_yasg'
 ]
 
 MIDDLEWARE = [
@@ -157,19 +157,12 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-
 SWAGGER_SETTINGS = {
-    'USE_SESSION_AUTH': False,
-    'relative_paths': False,
+    "USE_SESSION_AUTH": False,
+    "relative_paths": False,
     "DISPLAY_OPERATION_ID": False,
-    'SECURITY_DEFINITIONS': {
-        'Basic': {
-            'type': 'basic'
-        },
-        'Bearer': {
-            'type': 'apiKey',
-            'name': 'Authorization',
-            'in': 'header'
-        }
+    "SECURITY_DEFINITIONS": {
+        "Basic": {"type": "basic"},
+        "Bearer": {"type": "apiKey", "name": "Authorization", "in": "header"},
     },
 }

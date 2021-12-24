@@ -18,9 +18,13 @@ class RegisterUserAPI(View):
         user_register_serializer.is_valid(raise_exception=True)
         user_register_serializer.save()
 
-        return Response({
-            'message': 'Registration successful',
-            'data': user_register_serializer.data}, status=status.HTTP_201_CREATED)
+        return Response(
+            {
+                "message": "Registration successful",
+                "data": user_register_serializer.data,
+            },
+            status=status.HTTP_201_CREATED,
+        )
 
 
 class LogoutUserAPI(View):
