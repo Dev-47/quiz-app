@@ -26,5 +26,5 @@ jobs:
 
     - name: Analysing the code with black
       run: |
-        black .
+        black . -v
       working-directory: ${{env.working-dir}}
