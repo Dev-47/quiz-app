@@ -39,22 +39,19 @@ jobs:
 
     - name: Fetching changes from remote url on HTTPS
       run: |
-        git remote set-url origin https://github.com/Dev-47/quiz-app.git
+        git remote add origin https://github.com/Dev-47/quiz-app.git
         git pull origin main
 
     - name: Check for changes
       run: git status
-      working-directory: ${{env.working-dir}}
 
     - name: Stage changed files
       run: |
         git add .
-      working-directory: ${{env.working-dir}}
 
     - name: Commit changed files
       run: |
         git commit -m "GH-ACTIONS / updates new linted files"
-      working-directory: ${{env.working-dir}}
 
     - name: Push code to main
       run: |
