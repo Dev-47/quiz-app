@@ -1,19 +1,16 @@
-@import "utilities.scss";
+// I don't know what's wrong with this import, fix it if you can
+// @import "utilities.scss";
+
+$default-transition: 0.4s ease-in-out;
+$btn-text-color: rgb(22, 22, 22);
+
 
 .auth-form {
   max-width: 22rem;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: rgb(63, 62, 62);
-  @apply default-transition;
-  // @extend .debug;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: white !important;
-    box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.15);
-  }
+  transition: $default-transition;
+ 
 }
 
 .input-group {
@@ -28,7 +25,7 @@
     font-size: 0.8rem;
     margin-bottom: 0.2rem;
     color: gray;
-    @apply default-transition;
+    transition: $default-transition;
   }
 
   .form-control {
@@ -41,7 +38,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    @apply default-transition;
+    transition: $default-transition;
 
     &:focus {
       outline: none;
@@ -57,7 +54,7 @@
   margin: 0;
   padding: 0.1rem 0.5rem;
   border-radius: 1rem;
-  @apply default-transition;
+  transition: $default-transition;
 
   &:focus,
   &:hover,
@@ -75,7 +72,7 @@
   border-bottom: 2px solid white;
 }
 
-.authBtn {
+.auth-btn {
   width: 100%;
   padding: 0.5rem 1rem;
   margin: 1rem 0 0 0;
@@ -84,7 +81,7 @@
   color: $btn-text-color;
   font-weight: 600;
   cursor: pointer;
-  @apply default-transition;
+  transition: $default-transition;
 
   &:hover {
     color: rgb(45, 45, 45);
