@@ -41,7 +41,7 @@ quiz-app
 `mobile` folder is for the mobile application frontend
 `web` folder is for the web application frontend
 
-# * { notice: read !important }
+# \* { notice: read !important }
 
 Whatever you do, never edit the code base.
 In other words, don't edit the main branch directly, never. This is for the safety of yourself and others.
