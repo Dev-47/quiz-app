@@ -30,11 +30,9 @@
 quiz-app
 ├── api
 ├── mobile
-├── Contribution.md
-├── README.md
-└── web
+├── web
+└── ...
 
-3 directories, 2 files
 ```
 
 `api` folder is where the backend API lives
