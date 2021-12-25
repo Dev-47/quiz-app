@@ -45,6 +45,7 @@ urllib3 = "==1.26.7"
 wcwidth = "==0.2.5"
 drf-yasg = "*"
 black = "*"
+django-heroku = "*"
 
 [dev-packages]
 
