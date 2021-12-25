@@ -6,17 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('accounts', '0002_user_created_alter_user_id'),
+        ("accounts", "0002_user_created_alter_user_id"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='user',
-            name='date',
+            model_name="user",
+            name="date",
         ),
         migrations.AlterField(
-            model_name='user',
-            name='created',
+            model_name="user",
+            name="created",
             field=models.DateTimeField(auto_now_add=True),
         ),
     ]
