@@ -2,6 +2,8 @@ name: React Native Deploy
 
 on:
   push:
+    tags:
+      - '*'
     branches: [main]
 
 jobs:
