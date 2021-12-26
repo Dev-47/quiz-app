@@ -25,4 +25,6 @@ The web version is current at https://dev-47-quiz-app.netlify.app/
 
 # Frontend / mobile
 
-Coming soon !!!
+Check app releases at https://github.com/Dev-47/quiz-app/releases/
+
+> Currently available for android only
