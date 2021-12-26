@@ -25,4 +25,3 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         exclude = ["id", "password"]
-        ready_only_fields = ["is_staff", "is_superuser", "groups", "user_permissions"]
