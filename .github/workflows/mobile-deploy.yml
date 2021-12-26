@@ -52,7 +52,9 @@ jobs:
           path: mobile/android/app/build/outputs/apk/release/
       
       - name: Set version
-        run: echo "::set-output name=version::$(./bin/azblogfilter --version)"
+        run: |
+          echo "::set-output name=version::$(./bin/azblogfilter --version)"
+          ls -la && pwd
         id: version
       
       - name: Create release
