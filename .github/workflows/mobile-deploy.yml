@@ -6,7 +6,6 @@ on:
 
 jobs:
   build_deploy:
-    name: Deploy
     runs-on: ubuntu-latest
     env:
       working-dir: mobile
