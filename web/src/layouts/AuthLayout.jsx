@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import BaseLayout from "./BaseLayout";
 
-export default function AuthLayout({ children, pgtitle }) {
+export default function AuthLayout({ children, pgtitle, onSubmit }) {
   // content to show in the login page
   const loginCont = (
     <>
@@ -75,7 +75,7 @@ export default function AuthLayout({ children, pgtitle }) {
         </h2>
 
         <div className="w-full">
-          <form className="auth-form" onSubmit={preventDefault}>
+          <form className="auth-form" onSubmit={onSubmit}>
             {children}
             <button className="auth-btn">{pgtitle}</button>
           </form>
