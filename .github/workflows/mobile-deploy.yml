@@ -1,0 +1,55 @@
+name: React Native Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    env:
+      working-dir: mobile
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@master
+      - uses: c-hive/gha-yarn-cache@v1
+
+      - name: Install node modules
+        run: |
+          yarn install
+        working-directory: ${{env.working-dir}}
+      
+      - name: Cache Gradle Wrapper
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+        working-dir: ${{env.working-dir}}
+
+      - name: Cache Gradle Dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-caches-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-caches-
+        working-dir: ${{env.working-dir}}
+      
+      - name: Make Gradlew Executable
+        run: cd android && chmod +x ./gradlew
+        working-dir: ${{env.working-dir}}
+
+      - name: Build Android App Bundle
+        run: |
+          cd android && ./gradlew assembleRelease
+        working-dir: ${{env.working-dir}}
+      
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release.apk
+          path: android/app/build/outputs/apk/release/
+        working-dir: ${{env.working-dir}}
