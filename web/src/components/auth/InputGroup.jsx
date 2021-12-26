@@ -29,6 +29,7 @@ export default function InputGroup(props) {
             id={contenttitle}
             placeholder={placeHolder}
             autoComplete="off"
+            {...props}
           />
           <button
             type="button"
