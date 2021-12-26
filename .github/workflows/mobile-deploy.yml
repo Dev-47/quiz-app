@@ -53,7 +53,7 @@ jobs:
       
       - name: Set version
         run: |
-          echo "::set-output name=version::$(./bin/azblogfilter --version)"
+          cd mobile
           ls -la && pwd
         id: version
       
