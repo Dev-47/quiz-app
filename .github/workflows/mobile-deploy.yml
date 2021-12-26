@@ -3,7 +3,7 @@ name: React Native Deploy
 on:
   push:
     tags:
-      - "*"
+      - "v*"
     branches: [main]
 
 jobs:
