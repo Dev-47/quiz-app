@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserManager
+from django.utils import timezone
 import uuid
 
 
@@ -7,7 +8,7 @@ class BaseModel(models.Model):
     id = models.UUIDField(
         primary_key=True, max_length=36, default=uuid.uuid4, editable=False
     )
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(default=timezone.now, editable=False)
 
     class Meta:
         abstract = True
