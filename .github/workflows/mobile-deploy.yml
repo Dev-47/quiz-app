@@ -3,7 +3,7 @@ name: React Native Deploy
 on:
   push:
     tags:
-      - "v*"
+      - "v-*"
     branches: [main]
 
 jobs:
@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: app-release.apk
-          path: mobile/android/app/build/outputs/apk/release/**/*.apk
+          path: "mobile/android/app/build/outputs/apk/release/**/*.apk"
 
   release:
     runs-on: ubuntu-latest
