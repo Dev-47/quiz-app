@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: app-release.apk
-          path: "**/*.apk"
+          path: mobile/android/app/release/*.apk
 
   release:
     runs-on: ubuntu-latest
