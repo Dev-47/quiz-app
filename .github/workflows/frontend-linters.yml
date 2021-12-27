@@ -1,0 +1,51 @@
+name: JavaScript Lint
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    env:
+      working-dir: ./web
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.DEV_47_TOKEN }}
+
+      - name: Setup Node.JS
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Install prettier
+        run: |
+          npm install --save-dev --save-exact prettier
+        working-directory: ${{env.working-dir}}
+
+      - name: Run linting
+        run: |
+          npx prettier --write .
+
+      - name: Setting Identify for Git
+        run: |
+          git config user.email "dev-47.pilot@dev-47.com"
+          git config user.name "Dev 47 Pilot"
+      - name: Fetching changes from remote url on HTTPS
+        run: |
+          git remote add set-url https://github.com/Dev-47/quiz-app.git
+          git pull origin main
+      - name: Check for changes
+        run: git status
+
+      - name: Stage changed files
+        run: |
+          git add .
+      - name: Commit changed files
+        continue-on-error: true
+        run: |
+          git commit -m "GH-ACTIONS / updates new linted files"
+      - name: Push code to main
+        run: |
+          git push origin HEAD:main

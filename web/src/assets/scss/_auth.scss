@@ -1,0 +1,88 @@
+// I don't know what's wrong with this import, fix it if you can
+// @import "utilities.scss";
+
+$default-transition: 0.4s ease-in-out;
+$btn-text-color: rgb(22, 22, 22);
+
+.auth-form {
+  max-width: 22rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  transition: $default-transition;
+}
+
+.input-group {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0.2rem;
+  display: flex;
+  flex-direction: column;
+
+  .input-label {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+    color: gray;
+    transition: $default-transition;
+  }
+
+  .form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid gray;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    transition: $default-transition;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.toggle-btn {
+  background: #ccc;
+  color: $btn-text-color;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  transition: $default-transition;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: rgb(45, 45, 45);
+    background: rgb(235, 235, 235);
+  }
+}
+
+.auth-form:focus-within .input-label {
+  color: white;
+}
+
+.auth-form:focus-within .form-control {
+  border-bottom: 2px solid white;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0 0 0;
+  border-radius: 0.5rem;
+  background: #ccc;
+  color: $btn-text-color;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $default-transition;
+
+  &:hover {
+    color: rgb(45, 45, 45);
+    background: rgb(235, 235, 235);
+  }
+}
