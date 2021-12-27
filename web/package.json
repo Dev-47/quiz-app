@@ -2,6 +2,7 @@
   "name": "share-seller",
   "version": "0.0.0",
   "scripts": {
+    "start": "vite start",
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
