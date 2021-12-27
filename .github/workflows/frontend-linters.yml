@@ -1,6 +1,6 @@
 name: JavaScript Lint
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   lint:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.DEV_47_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.JS
         uses: actions/setup-node@v2
