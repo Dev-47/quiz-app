@@ -1,6 +1,6 @@
 name: Python Lint
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.DEV_47_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
