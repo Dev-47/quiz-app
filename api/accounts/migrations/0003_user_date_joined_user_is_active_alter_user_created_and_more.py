@@ -7,38 +7,54 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('accounts', '0002_alter_user_created'),
+        ("accounts", "0002_alter_user_created"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='date_joined',
-            field=models.DateTimeField(default=django.utils.timezone.now, verbose_name='date joined'),
+            model_name="user",
+            name="date_joined",
+            field=models.DateTimeField(
+                default=django.utils.timezone.now, verbose_name="date joined"
+            ),
         ),
         migrations.AddField(
-            model_name='user',
-            name='is_active',
-            field=models.BooleanField(default=True, help_text='Designates whether this user should be treated as active. Unselect this instead of deleting accounts.', verbose_name='active'),
+            model_name="user",
+            name="is_active",
+            field=models.BooleanField(
+                default=True,
+                help_text="Designates whether this user should be treated as active. Unselect this instead of deleting accounts.",
+                verbose_name="active",
+            ),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='created',
+            model_name="user",
+            name="created",
             field=models.DateTimeField(auto_now_add=True),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='id',
-            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            model_name="user",
+            name="id",
+            field=models.BigAutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+            ),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='is_staff',
-            field=models.BooleanField(default=False, help_text='Designates whether the user can log into this admin site.', verbose_name='staff status'),
+            model_name="user",
+            name="is_staff",
+            field=models.BooleanField(
+                default=False,
+                help_text="Designates whether the user can log into this admin site.",
+                verbose_name="staff status",
+            ),
         ),
         migrations.AlterField(
-            model_name='user',
-            name='is_superuser',
-            field=models.BooleanField(default=False, help_text='Designates that this user has all permissions without explicitly assigning them.', verbose_name='superuser status'),
+            model_name="user",
+            name="is_superuser",
+            field=models.BooleanField(
+                default=False,
+                help_text="Designates that this user has all permissions without explicitly assigning them.",
+                verbose_name="superuser status",
+            ),
         ),
     ]
