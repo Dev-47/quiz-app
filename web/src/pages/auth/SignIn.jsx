@@ -13,9 +13,7 @@ function SignIn({ loginUser }) {
     loginUser({ username, password });
   };
 
-  
   return (
-
     <AuthLayout
       pgtitle="Login"
       onSubmit={(e) => {

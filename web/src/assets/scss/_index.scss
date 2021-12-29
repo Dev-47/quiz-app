@@ -1,4 +1,3 @@
-
 @import "utilities.scss";
 
 .logo {
@@ -17,11 +16,11 @@
   width: 100%;
   color: $default-color;
   // overflow-x: hidden;
-  
+
   .btn-blue {
     @include btn(0.7rem 2rem, $default-color);
   }
-  
+
   .btn-white {
     @include btn(0.7rem 1.2rem, transparent);
   }

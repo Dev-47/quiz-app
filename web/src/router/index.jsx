@@ -7,7 +7,6 @@ import SignUp from "../pages/auth/SignUp";
 import ResetPassword from "../pages/auth/ResetPassword";
 import ErrorPage from "../pages/error/ErrorPage";
 
-
 export default function Router() {
   return (
     <Routes>

@@ -8,7 +8,10 @@ export default function Footer() {
         </div>
       </a>
 
-      <h3 className="text-[#026294] text-sm p-5"> Copyright &copy; {new Date().getFullYear()} </h3>
+      <h3 className="text-[#026294] text-sm p-5">
+        {" "}
+        Copyright &copy; {new Date().getFullYear()}{" "}
+      </h3>
     </footer>
   );
 }

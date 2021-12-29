@@ -2,18 +2,16 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Nav({ content }) {
-
-
   const links = [
     {
       title: "Login",
-      cont: <Link to="/sign-in">Login</Link>
+      cont: <Link to="/sign-in">Login</Link>,
     },
     {
       title: "Sign Up",
-      cont: <Link to="/sign-up">Sign Up</Link>
-    }
-  ]
+      cont: <Link to="/sign-up">Sign Up</Link>,
+    },
+  ];
 
   // usestate to show the content in the auth pages
   const [item, setItem] = useState({});
@@ -39,9 +37,7 @@ export default function Nav({ content }) {
         <span>For Schools </span>
         <span>For Teacher</span>
       </ul>
-      <button className="nav-btn">
-        {item.cont}
-      </button>
+      <button className="nav-btn">{item.cont}</button>
     </nav>
   );
 }

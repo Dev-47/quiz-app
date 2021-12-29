@@ -3,7 +3,6 @@ import user from "../assets/images/profile.jpg";
 import BaseLayout from "../layouts/BaseLayout";
 import bgImage from "../assets/images/1-HERO-Digital_Collage.png";
 export default function Index() {
-
   return (
     <BaseLayout>
       <div className="flex bg-[#fffaf2] text-center p-4 index">
@@ -38,13 +37,13 @@ export default function Index() {
 
         <article className="mt-10 flex flex-col place-content-center place-items-center relative">
           <h4 className="bg-[#3f8eb7] text-white rounded-lg pt-3 px-12 pb-8">
-            "One of our math teachers started using Quizzz  Lessons this
-            week and it was a game changer for her and her students."
+            "One of our math teachers started using Quizzz Lessons this week and
+            it was a game changer for her and her students."
           </h4>
           <div className="flex justify-around space-x-4 absolute top-24">
-            <img src={user} alt="user" className="rounded-full w-12 h-12"/>
-            <img src={user} alt="user" className="rounded-full w-12 h-12"/>
-            <img src={user} alt="user" className="rounded-full w-12 h-12"/>
+            <img src={user} alt="user" className="rounded-full w-12 h-12" />
+            <img src={user} alt="user" className="rounded-full w-12 h-12" />
+            <img src={user} alt="user" className="rounded-full w-12 h-12" />
           </div>
         </article>
       </section>

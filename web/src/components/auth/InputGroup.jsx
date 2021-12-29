@@ -19,7 +19,6 @@ export default function InputGroup(props) {
   if (type === "password") {
     return (
       <div {...props} className="">
-       
         <div className="relative">
           <input
             type={show ? "text" : type}
@@ -45,7 +44,6 @@ export default function InputGroup(props) {
   // if the input type is not password, show the below
   return (
     <div {...props} className="">
-      
       <input
         type={type}
         className="form-control"
