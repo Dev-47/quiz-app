@@ -4,7 +4,6 @@ import Nav from "../components/baselayout/Nav";
 import Footer from "../components/baselayout/Footer";
 
 export default function AuthLayout({ children, pgtitle, onSubmit, navBtn }) {
-
   // array of content to show in the auth pages
   const extra = [
     {
@@ -32,11 +31,11 @@ export default function AuthLayout({ children, pgtitle, onSubmit, navBtn }) {
         setItem(item);
       });
   }, []);
-   
+
   // react default return
   return (
     <div>
-      <Nav content={navBtn}/>
+      <Nav content={navBtn} />
       <div className="bg-[#fffaf2] h-screen p-4">
         <div className="text-black grid max-w-md shadow-md bg-white my-0 mx-auto">
           <h2 className="grid place-content-center text-center font-light text-4xl text-[#026294] m-4">

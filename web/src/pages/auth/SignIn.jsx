@@ -14,7 +14,7 @@ function SignIn({ loginUser }) {
     loginUser({ username, password });
   };
 
-  return ( 
+  return (
     <AuthLayout
       pgtitle="Login"
       navBtn="Sign Up"
@@ -33,7 +33,9 @@ function SignIn({ loginUser }) {
         contenttitle="Password"
         onChange={(e) => set_password(e.target.value)}
       />
-      <p className="float-right py-3 px-2"><Link to="/reset-password">Forgot Password?</Link></p>
+      <p className="float-right py-3 px-2">
+        <Link to="/reset-password">Forgot Password?</Link>
+      </p>
     </AuthLayout>
   );
 }

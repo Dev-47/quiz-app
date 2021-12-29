@@ -1,6 +1,4 @@
-
 @import "utilities.scss";
-
 
 .auth-form {
   max-width: 30rem;
@@ -13,10 +11,10 @@
 .form-control {
   border: 1px solid #026294;
   border-radius: 0.5rem;
-  margin: .7rem 0;
+  margin: 0.7rem 0;
   width: 100%;
   transition: $default-transition;
-  
+
   &:focus,
   &:active,
   &:hover {
