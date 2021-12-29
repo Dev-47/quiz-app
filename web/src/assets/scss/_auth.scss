@@ -1,11 +1,9 @@
-// I don't know what's wrong with this import, fix it if you can
-// @import "utilities.scss";
 
-$default-transition: 0.4s ease-in-out;
-$btn-text-color: rgb(22, 22, 22);
+@import "utilities.scss";
+
 
 .auth-form {
-  max-width: 22rem;
+  max-width: 30rem;
   margin: 2rem auto;
   padding: 1rem;
   transition: $default-transition;
@@ -13,36 +11,26 @@ $btn-text-color: rgb(22, 22, 22);
 }
 
 .form-control {
-  // border: 2px solid #026294;
-  border: none;
-  outline: none;
-  border-radius: 1rem;
-  margin: 1rem 0;
-
+  border: 1px solid #026294;
+  border-radius: 0.5rem;
+  margin: .7rem 0;
+  width: 100%;
+  transition: $default-transition;
+  
   &:focus,
   &:active,
   &:hover {
-    outline: none !important;
-    border: red;
+    border: 2px solid #026294;
+    outline: none;
   }
 }
 
 .toggle-btn {
-  background: #ccc;
-  color: $btn-text-color;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   margin: 0;
-  padding: 0.1rem 0.5rem;
+  @include btn(0.1rem 0.5rem, none);
   border-radius: 1rem;
-  transition: $default-transition;
-
-  &:focus,
-  &:hover,
-  &:active {
-    color: rgb(45, 45, 45);
-    background: rgb(235, 235, 235);
-  }
 }
 
 .auth-btn {

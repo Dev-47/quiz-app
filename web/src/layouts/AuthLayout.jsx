@@ -3,24 +3,21 @@ import { useEffect, useState } from "react";
 import Nav from "../components/baselayout/Nav";
 import Footer from "../components/baselayout/Footer";
 
-export default function AuthLayout({ children, pgtitle, onSubmit }) {
+export default function AuthLayout({ children, pgtitle, onSubmit, navBtn }) {
 
   // array of content to show in the auth pages
   const extra = [
     {
       title: "Login",
       cont: "Login with your email and password below",
-      nav_cont: "Sign Up",
     },
     {
       title: "Sign Up",
       cont: null,
-      nav_cont: "Login",
     },
     {
       title: "Reset Password",
       cont: "enter your email below to reset your password",
-      nav_cont: "Login",
     },
   ];
 
@@ -35,20 +32,20 @@ export default function AuthLayout({ children, pgtitle, onSubmit }) {
         setItem(item);
       });
   }, []);
-  
+   
   // react default return
   return (
     <div>
-      <Nav content={item.nav_cont}/>
-      <div className="bg-[#fffaf2] p-4">
-        <div className="text-black grid w-[24rem] shadow-md bg-white rounded my-0 mx-auto">
+      <Nav content={navBtn}/>
+      <div className="bg-[#fffaf2] h-screen p-4">
+        <div className="text-black grid max-w-md shadow-md bg-white my-0 mx-auto">
           <h2 className="grid place-content-center text-center font-light text-4xl text-[#026294] m-4">
             Welcome To Dev 47 Quiz
           </h2>
           <p className="text-center">{item.cont}</p>
 
-          <div className="w-20S">
-            <form className="auth-form " onSubmit={onSubmit}>
+          <div className="">
+            <form className="auth-form" onSubmit={onSubmit}>
               {children}
               <button className="auth-btn bg-[#026294] text-white ">
                 {pgtitle}
