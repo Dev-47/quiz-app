@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import Nav from "../components/baselayout/Nav";
 import Footer from "../components/baselayout/Footer";
 
 export default function AuthLayout({ children, pgtitle, onSubmit }) {
+
   // array of content to show in the auth pages
   const extra = [
     {
@@ -35,14 +35,14 @@ export default function AuthLayout({ children, pgtitle, onSubmit }) {
         setItem(item);
       });
   }, []);
-
+  
   // react default return
   return (
     <div>
-      <Nav content={item.nav_cont} />
+      <Nav content={item.nav_cont}/>
       <div className="bg-[#fffaf2] p-4">
         <div className="text-black grid w-[24rem] shadow-md bg-white rounded my-0 mx-auto">
-          <h2 className="grid place-content-center text-center font-light text-4xl text-[#026294] font-bold m-4">
+          <h2 className="grid place-content-center text-center font-light text-4xl text-[#026294] m-4">
             Welcome To Dev 47 Quiz
           </h2>
           <p className="text-center">{item.cont}</p>
@@ -61,6 +61,3 @@ export default function AuthLayout({ children, pgtitle, onSubmit }) {
     </div>
   );
 }
-
-// how far
-// check session chat

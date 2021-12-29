@@ -10,7 +10,6 @@ $btn-text-color: rgb(22, 22, 22);
   padding: 1rem;
   transition: $default-transition;
   font-family: "Lato", sans-serif;
-  @extend .debug-all;
 }
 
 .form-control {
