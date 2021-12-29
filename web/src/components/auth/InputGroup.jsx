@@ -2,10 +2,10 @@ import { useState } from "react";
 
 export default function InputGroup(props) {
   // props
-  const { type, contenttitle } = props;
+  const { type, contenttitle, onChange } = props;
 
   // placeholder for the input
-  const placeHolder = `Enter your ${contenttitle}`;
+  const placeHolder = ` ${contenttitle}`;
 
   // state to toggle the input type
   const [show, setShow] = useState(false);
@@ -18,10 +18,7 @@ export default function InputGroup(props) {
   // if the input type is password, show the below
   if (type === "password") {
     return (
-      <div {...props} className="input-group">
-        <label htmlFor={contenttitle} className="input-label">
-          {contenttitle}
-        </label>
+      <div {...props} className="">
         <div className="relative">
           <input
             type={show ? "text" : type}
@@ -29,7 +26,7 @@ export default function InputGroup(props) {
             id={contenttitle}
             placeholder={placeHolder}
             autoComplete="off"
-            {...props}
+            onChange={onChange}
           />
           <button
             type="button"
@@ -46,15 +43,13 @@ export default function InputGroup(props) {
 
   // if the input type is not password, show the below
   return (
-    <div {...props} className="input-group">
-      <label htmlFor={contenttitle} className="input-label">
-        {contenttitle}
-      </label>
+    <div {...props} className="">
       <input
         type={type}
         className="form-control"
         id={contenttitle}
         placeholder={placeHolder}
+        onChange={onchange}
       />
     </div>
   );
