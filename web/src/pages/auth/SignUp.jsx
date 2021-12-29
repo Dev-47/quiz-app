@@ -7,7 +7,6 @@ export default function SignUp() {
       <InputGroup type="text" contenttitle="Username" />
       <InputGroup type="email" contenttitle="Email" />
       <InputGroup type="password" contenttitle="Password" />
-      <InputGroup type="password" contenttitle="Password Again" />
     </AuthLayout>
   );
 }
