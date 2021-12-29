@@ -1,8 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
+// variable
+$default-transition: 0.4s ease-in-out;
+$default-color: #026294;
+
+// extend
 .debug {
-  border: 2px solid white;
+  border: 2px solid black;
 }
 
-$default-transition: 0.4s ease-in-out;
-$btn-text-color: rgb(22, 22, 22);
+.debug-all > * {
+  border: 1px solid black;
+}
+
+//mixins
+@mixin btn($padding, $bg-color) {
+  background-color: $bg-color;
+  color: btn-color($bg-color);
+  padding: $padding;
+  border-radius: 0.6rem;
+  font-weight: 800;
+
+  &:hover {
+    transform: scale(0.9);
+    transition: $default-transition;
+  }
+}
+
+// functions
+@function btn-color($btn-color) {
+  @if ($btn-color == $default-color) {
+    @return white;
+  } @else {
+    @return $default-color;
+  }
+}
