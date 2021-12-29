@@ -14,9 +14,10 @@ function SignIn({ loginUser }) {
     loginUser({ username, password });
   };
 
-  return (
+  return ( 
     <AuthLayout
       pgtitle="Login"
+      navBtn="Sign Up"
       onSubmit={(e) => {
         e.preventDefault();
         __login_user(username, password);
