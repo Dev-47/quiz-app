@@ -61,11 +61,6 @@ export default function AuthLayout({ children, pgtitle, onSubmit }) {
       });
   }, []);
 
-  // prevent the default action of the form
-  const preventDefault = (e) => {
-    e.preventDefault();
-  };
-
   // react default return
   return (
     <BaseLayout>

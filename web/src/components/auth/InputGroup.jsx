@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function InputGroup(props) {
   // props
-  const { type, contenttitle } = props;
+  const { type, contenttitle, onChange } = props;
 
   // placeholder for the input
   const placeHolder = `Enter your ${contenttitle}`;
@@ -29,7 +29,7 @@ export default function InputGroup(props) {
             id={contenttitle}
             placeholder={placeHolder}
             autoComplete="off"
-            {...props}
+            onChange={onChange}
           />
           <button
             type="button"
@@ -55,6 +55,7 @@ export default function InputGroup(props) {
         className="form-control"
         id={contenttitle}
         placeholder={placeHolder}
+        onChange={onChange}
       />
     </div>
   );
