@@ -13,7 +13,7 @@ export default function Nav({ content }) {
     },
   ];
 
-  // usestate to show the content in the auth pages
+  // usestate to show the links in the nav
   const [item, setItem] = useState({});
 
   // useEffect to the show content according to the page title props
