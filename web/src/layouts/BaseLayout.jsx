@@ -3,8 +3,8 @@ import Nav from "../components/baselayout/Nav";
 
 export default function BaseLayout({ children }) {
   return (
-    <div className="w-full bg-gray-900 text-white body">
-      <Nav />
+    <div className="w-full text-white body">
+      <Nav content="Sign Up" />
       {children}
       <Footer />
     </div>
