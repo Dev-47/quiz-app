@@ -1,26 +1,13 @@
-<<<<<<< HEAD
-// @import "tailwindcss/base";
-// @import "tailwindcss/components";
-// @import "tailwindcss/utilities";
-
-// .btn-text {
-//     @apply p-2 m-4 bg-blue-900 rounded-lg text-white flex place-items-center shadow-md hover:bg-blue-700;
-//     transition: 0.5s ease-in-out;
-// }
-
-// .preview-text {
-//     @apply text-2xl bg-red;
-// }
-=======
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
 @import "utilities.scss";
+@import "loader.scss";
+@import "index.scss";
 
 .body {
   font-family: "Lato", sans-serif;
 }
 
 @import "auth.scss";
->>>>>>> a90a8cda770f74ef7e3de59b8059c4d85ecc5a9e

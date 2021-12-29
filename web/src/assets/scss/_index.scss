@@ -1,0 +1,33 @@
+
+@import "utilities.scss";
+
+.logo {
+  span {
+    font-family: "Varela Round", sans-serif;
+    font-weight: 900;
+  }
+}
+
+.nav-btn {
+  @include btn(0.4rem 1rem, $default-color);
+  margin-left: 2rem;
+}
+
+.index {
+  width: 100%;
+  color: $default-color;
+  // overflow-x: hidden;
+  
+  .btn-blue {
+    @include btn(0.7rem 2rem, $default-color);
+  }
+  
+  .btn-white {
+    @include btn(0.7rem 1.2rem, transparent);
+  }
+}
+
+article {
+  width: 30rem;
+  margin: 0 auto;
+}
