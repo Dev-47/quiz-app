@@ -6,6 +6,8 @@ import SignIn from "../pages/auth/SignIn";
 import SignUp from "../pages/auth/SignUp";
 import ResetPassword from "../pages/auth/ResetPassword";
 import ErrorPage from "../pages/error/ErrorPage";
+import Dashboard from "../pages/account/Dashboard";
+import Profile from "../pages/account/Profile";
 
 export default function Router() {
   return (
@@ -19,6 +21,10 @@ export default function Router() {
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/reset-password" element={<ResetPassword />} />
+      {/* account */}
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/profile" element={<Profile />} />
+      {/* quiz */}
     </Routes>
   );
 }
