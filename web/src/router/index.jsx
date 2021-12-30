@@ -5,8 +5,16 @@ import Index from "../pages/Index";
 import SignIn from "../pages/auth/SignIn";
 import SignUp from "../pages/auth/SignUp";
 import ResetPassword from "../pages/auth/ResetPassword";
-import ErrorPage from "../pages/error/ErrorPage";
-import QuizResult from "../pages/QuizResult"
+import Dashboard from "../pages/account/Dashboard";
+import Profile from "../pages/account/Profile";
+import StartQuiz from "../pages/quiz/StartQuiz";
+import QuizList from "../pages/quiz/QuizList";
+import Result from "../pages/quiz/Result";
+
+// error pages
+
+// import ErrorPage from "../pages/error/ErrorPage";
+import Error404 from "../pages/error/Error404";
 
 export default function Router() {
   return (
@@ -24,7 +32,9 @@ export default function Router() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/profile" element={<Profile />} />
       {/* quiz */}
-      <Route path="/start-quiz" element={<StartQuiz />} />
+      <Route path="/quiz/list" element={<QuizList />} />
+      <Route path="/quiz/:uuid/start" element={<StartQuiz />} />
+      <Route path="/quiz/:uuid/result" element={<Result />} />
     </Routes>
     
   );

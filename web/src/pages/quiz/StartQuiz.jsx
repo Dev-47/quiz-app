@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import BaseLayout from "../../layouts/BaseLayout";
 
 export default function StartQuiz() {
+  const { uuid } = useParams();
+
   // number of questions and time limit
   const quiz_id = [
     {
