@@ -8,6 +8,7 @@ import ResetPassword from "../pages/auth/ResetPassword";
 import ErrorPage from "../pages/error/ErrorPage";
 import Dashboard from "../pages/account/Dashboard";
 import Profile from "../pages/account/Profile";
+import StartQuiz from "../pages/quiz/StartQuiz";
 
 export default function Router() {
   return (
@@ -25,6 +26,7 @@ export default function Router() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/profile" element={<Profile />} />
       {/* quiz */}
+      <Route path="/start-quiz" element={<StartQuiz />} />
     </Routes>
   );
 }
