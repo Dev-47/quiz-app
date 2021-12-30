@@ -19,22 +19,22 @@ export default function InputGroup(props) {
   if (type === "password") {
     return (
       <div {...props} className="relative p-0 border-none">
-          <input
-            type={show ? "text" : type}
-            className="form-control"
-            id={contenttitle}
-            placeholder={placeHolder}
-            autoComplete="off"
-            onChange={onChange}
-          />
-          <button
-            type="button"
-            className="absolute right-0 top-4 toggle-btn"
-            id="toggle"
-            onClick={handleClick}
-          >
-            {show ? "hide" : "show"}
-          </button>
+        <input
+          type={show ? "text" : type}
+          className="form-control"
+          id={contenttitle}
+          placeholder={placeHolder}
+          autoComplete="off"
+          onChange={onChange}
+        />
+        <button
+          type="button"
+          className="absolute right-0 top-4 toggle-btn"
+          id="toggle"
+          onClick={handleClick}
+        >
+          {show ? "hide" : "show"}
+        </button>
       </div>
     );
   }

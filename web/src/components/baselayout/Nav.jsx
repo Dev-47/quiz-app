@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Nav(props) {
-
-  const {content} = props;
+  const { content } = props;
 
   const links = [
     {
@@ -14,7 +13,7 @@ export default function Nav(props) {
       title: "Sign Up",
       cont: <Link to="/sign-up">Sign Up</Link>,
     },
-  ]; 
+  ];
 
   // usestate to show the links in the nav
   const [item, setItem] = useState({});
@@ -29,7 +28,10 @@ export default function Nav(props) {
   }, []);
 
   return (
-    <nav {...props} className="navbar shadow-md bg-white flex justify-between px-10 py-5 sm:py-3 mb-2 place-items-center z-10">
+    <nav
+      {...props}
+      className="navbar shadow-md bg-white flex justify-between px-10 py-3 mb-2 place-items-center z-10"
+    >
       <div className="logo">
         <Link to="/">
           <span className="text-[#e01936] text-3xl">DEV &nbsp;</span>
