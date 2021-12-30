@@ -17,7 +17,7 @@ function SignIn({ loginUser }) {
   // page title
   document.title = "Login - Quiz App";
 
-  return ( 
+  return (
     <AuthLayout
       pgtitle="Login"
       navBtn="Sign Up"

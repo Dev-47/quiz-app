@@ -3,7 +3,6 @@ import user from "../assets/images/profile.jpg";
 import BaseLayout from "../layouts/BaseLayout";
 import bgImage from "../assets/images/1-HERO-Digital_Collage.png";
 export default function Index() {
-  
   // page title
   document.title = "Quiz App";
 

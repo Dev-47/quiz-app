@@ -1,5 +1,5 @@
 @use "utilities.scss";
 
 .quiz-btn {
-    @include btn(2rem 0, none);
+  @include btn(2rem 0, none);
 }
