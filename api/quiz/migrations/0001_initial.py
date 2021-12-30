@@ -11,51 +11,98 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('accounts', '0003_user_date_joined_user_is_active_alter_user_created_and_more'),
+        (
+            "accounts",
+            "0003_user_date_joined_user_is_active_alter_user_created_and_more",
+        ),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Option',
+            name="Option",
             fields=[
-                ('id', models.UUIDField(default=uuid.UUID('80aaf430-1b27-4a60-8325-064f488682f1'), primary_key=True, serialize=False)),
-                ('created', models.DateTimeField(auto_now_add=True)),
-                ('updated', models.DateTimeField(auto_now=True)),
-                ('text', models.TextField()),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.UUID("80aaf430-1b27-4a60-8325-064f488682f1"),
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("created", models.DateTimeField(auto_now_add=True)),
+                ("updated", models.DateTimeField(auto_now=True)),
+                ("text", models.TextField()),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
         migrations.CreateModel(
-            name='Quiz',
+            name="Quiz",
             fields=[
-                ('id', models.UUIDField(default=uuid.UUID('80aaf430-1b27-4a60-8325-064f488682f1'), primary_key=True, serialize=False)),
-                ('created', models.DateTimeField(auto_now_add=True)),
-                ('updated', models.DateTimeField(auto_now=True)),
-                ('title', models.CharField(max_length=255)),
-                ('duration', models.DurationField(default=datetime.timedelta(seconds=600))),
-                ('enable_time', models.BooleanField(default=False)),
-                ('enable_negative_marking', models.BooleanField(default=False)),
-                ('host', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='accounts.user')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.UUID("80aaf430-1b27-4a60-8325-064f488682f1"),
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("created", models.DateTimeField(auto_now_add=True)),
+                ("updated", models.DateTimeField(auto_now=True)),
+                ("title", models.CharField(max_length=255)),
+                (
+                    "duration",
+                    models.DurationField(default=datetime.timedelta(seconds=600)),
+                ),
+                ("enable_time", models.BooleanField(default=False)),
+                ("enable_negative_marking", models.BooleanField(default=False)),
+                (
+                    "host",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="accounts.user"
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
         migrations.CreateModel(
-            name='Question',
+            name="Question",
             fields=[
-                ('id', models.UUIDField(default=uuid.UUID('80aaf430-1b27-4a60-8325-064f488682f1'), primary_key=True, serialize=False)),
-                ('created', models.DateTimeField(auto_now_add=True)),
-                ('updated', models.DateTimeField(auto_now=True)),
-                ('question', models.TextField()),
-                ('answer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='answer', to='quiz.option')),
-                ('options', models.ManyToManyField(related_name='option', to='quiz.Option')),
-                ('quiz', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='quiz.quiz')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.UUID("80aaf430-1b27-4a60-8325-064f488682f1"),
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("created", models.DateTimeField(auto_now_add=True)),
+                ("updated", models.DateTimeField(auto_now=True)),
+                ("question", models.TextField()),
+                (
+                    "answer",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="answer",
+                        to="quiz.option",
+                    ),
+                ),
+                (
+                    "options",
+                    models.ManyToManyField(related_name="option", to="quiz.Option"),
+                ),
+                (
+                    "quiz",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="quiz.quiz"
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
     ]
