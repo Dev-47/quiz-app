@@ -14,6 +14,9 @@ function SignIn({ loginUser }) {
     loginUser({ username, password });
   };
 
+  // page title
+  document.title = "Login - Quiz App";
+
   return ( 
     <AuthLayout
       pgtitle="Login"
