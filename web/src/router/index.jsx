@@ -13,6 +13,7 @@ import StartQuiz from "../pages/quiz/StartQuiz";
 
 // import ErrorPage from "../pages/error/ErrorPage";
 import Error404 from "../pages/error/Error404";
+import QuizList from "../pages/quiz/QuizList";
 
 export default function Router() {
   return (
@@ -30,7 +31,8 @@ export default function Router() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/profile" element={<Profile />} />
       {/* quiz */}
-      <Route path="/start-quiz" element={<StartQuiz />} />
+      <Route path="/quiz/list" element={<QuizList />} />
+      <Route path="/quiz/:uuid/start" element={<StartQuiz />} />
     </Routes>
   );
 }
