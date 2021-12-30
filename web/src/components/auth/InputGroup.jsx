@@ -18,8 +18,7 @@ export default function InputGroup(props) {
   // if the input type is password, show the below
   if (type === "password") {
     return (
-      <div {...props} className="">
-        <div className="relative">
+      <div {...props} className="relative p-0 border-none">
           <input
             type={show ? "text" : type}
             className="form-control"
@@ -30,26 +29,25 @@ export default function InputGroup(props) {
           />
           <button
             type="button"
-            className="absolute right-0 toggle-btn"
+            className="absolute right-0 top-4 toggle-btn"
             id="toggle"
             onClick={handleClick}
           >
             {show ? "hide" : "show"}
           </button>
-        </div>
       </div>
     );
   }
 
   // if the input type is not password, show the below
   return (
-    <div {...props} className="">
+    <div {...props} className=" p-0 border-none">
       <input
         type={type}
         className="form-control"
         id={contenttitle}
         placeholder={placeHolder}
-        onChange={onchange}
+        onChange={onChange}
       />
     </div>
   );
