@@ -5,16 +5,20 @@ import Index from "../pages/Index";
 import SignIn from "../pages/auth/SignIn";
 import SignUp from "../pages/auth/SignUp";
 import ResetPassword from "../pages/auth/ResetPassword";
-import ErrorPage from "../pages/error/ErrorPage";
 import Dashboard from "../pages/account/Dashboard";
 import Profile from "../pages/account/Profile";
 import StartQuiz from "../pages/quiz/StartQuiz";
+
+// error pages
+
+// import ErrorPage from "../pages/error/ErrorPage";
+import Error404 from "../pages/error/Error404";
 
 export default function Router() {
   return (
     <Routes>
       {/* error page */}
-      <Route path="*" element={<ErrorPage />} />
+      <Route path="*" element={<Error404 />} />
 
       {/* index page */}
       <Route path="/" element={<Index />} />
