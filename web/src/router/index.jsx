@@ -9,6 +9,7 @@ import ErrorPage from "../pages/error/ErrorPage";
 import Dashboard from "../pages/account/Dashboard";
 import Profile from "../pages/account/Profile";
 import StartQuiz from "../pages/quiz/StartQuiz";
+import Preveiw from "../pages/Preveiw";
 
 export default function Router() {
   return (
@@ -27,6 +28,8 @@ export default function Router() {
       <Route path="/profile" element={<Profile />} />
       {/* quiz */}
       <Route path="/start-quiz" element={<StartQuiz />} />
+      {/* preview route for frontend development purpose */}
+      <Route path="/preview" element={<Preveiw />} />
     </Routes>
   );
 }
