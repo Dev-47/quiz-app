@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="text-black flex justify-between mt-14 place-items-center px-8">
+    <footer className="text-black flex justify-between sm:mt-14 place-items-center px-8">
       <a href="https://github.com/dev-47">
         <div className="logo m-10">
           <span className="text-[#e01936] text-2xl">DEV &nbsp;</span>
@@ -8,7 +8,7 @@ export default function Footer() {
         </div>
       </a>
 
-      <h3 className="text-[#026294] text-sm p-5">
+      <h3 className="text-[#48768f] text-lg sm:p-5">
         {" "}
         Copyright &copy; {new Date().getFullYear()}{" "}
       </h3>
