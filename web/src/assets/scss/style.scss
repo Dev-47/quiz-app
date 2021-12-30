@@ -3,11 +3,12 @@
 @import "tailwindcss/utilities";
 
 @import "utilities.scss";
-@import "loader.scss";
-@import "index.scss";
 
-.body {
+body {
   font-family: "Lato", sans-serif;
 }
 
+@import "loader.scss";
+@import "index.scss";
 @import "auth.scss";
+@import "quiz.scss";

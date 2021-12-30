@@ -3,10 +3,13 @@ import user from "../assets/images/profile.jpg";
 import BaseLayout from "../layouts/BaseLayout";
 import bgImage from "../assets/images/1-HERO-Digital_Collage.png";
 export default function Index() {
+  // page title
+  document.title = "Quiz App";
+
   return (
     <BaseLayout>
-      <div className="flex bg-[#fffaf2] text-center p-4 index">
-        <section className="mt-[5em] ml-[6em]">
+      <div className="flex bg-[#fffaf2] text-center p-5 sm:p-4 index">
+        <section className="mt-[5em] sm:ml-[6em]">
           <h1 className="font-bold text-6xl pb-10">
             <b>
               Welcome to <br className="mb--20px" /> <br /> DEV 47 Quiz App
@@ -22,11 +25,11 @@ export default function Index() {
             <Link to="/sign-in">Log in</Link>
           </button>
         </section>
-        <section className="w-[50%]">
+        <section className="w-[50%] hidden sm:block">
           <img src={bgImage} alt="background-image"></img>
         </section>
       </div>
-      <section className="text-center mt-20">
+      <section className="text-center mt-20 p-2">
         <h3 className="text-black text-4xl font-bold">
           Loved by educators in over 50% of African schools <br /> and 150
           countries.
@@ -37,7 +40,7 @@ export default function Index() {
 
         <article className="mt-10 flex flex-col place-content-center place-items-center relative">
           <h4 className="bg-[#3f8eb7] text-white rounded-lg pt-3 px-12 pb-8">
-            "One of our math teachers started using Quizzz Lessons this week and
+            "One of our math teachers started using Quiz Lessons this week and
             it was a game changer for her and her students."
           </h4>
           <div className="flex justify-around space-x-4 absolute top-24">

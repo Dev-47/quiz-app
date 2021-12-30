@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { loginUser } from "../../store/actions/auth";
 
@@ -13,9 +14,13 @@ function SignIn({ loginUser }) {
     loginUser({ username, password });
   };
 
+  // page title
+  document.title = "Login - Quiz App";
+
   return (
     <AuthLayout
       pgtitle="Login"
+      navBtn="Sign Up"
       onSubmit={(e) => {
         e.preventDefault();
         __login_user(username, password);
@@ -31,6 +36,9 @@ function SignIn({ loginUser }) {
         contenttitle="Password"
         onChange={(e) => set_password(e.target.value)}
       />
+      <p className="float-right py-3 px-2">
+        <Link to="/reset-password">Forgot Password?</Link>
+      </p>
     </AuthLayout>
   );
 }

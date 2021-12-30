@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Nav({ content }) {
+export default function Nav(props) {
+  const { content } = props;
+
   const links = [
     {
       title: "Login",
@@ -13,7 +15,7 @@ export default function Nav({ content }) {
     },
   ];
 
-  // usestate to show the content in the auth pages
+  // usestate to show the links in the nav
   const [item, setItem] = useState({});
 
   // useEffect to the show content according to the page title props
@@ -26,14 +28,17 @@ export default function Nav({ content }) {
   }, []);
 
   return (
-    <nav className="navbar shadow-md bg-white flex justify-between px-10 py-3 mb-2 place-items-center z-10">
+    <nav
+      {...props}
+      className="navbar shadow-md bg-white flex justify-between px-10 py-3 mb-2 place-items-center z-10"
+    >
       <div className="logo">
         <Link to="/">
           <span className="text-[#e01936] text-3xl">DEV &nbsp;</span>
           <span className="text-[#026294] text-3xl">47</span>
         </Link>
       </div>
-      <ul className="text-black flex justify-between mr-[400px] space-x-10">
+      <ul className="text-black hidden sm:flex justify-between mr-[400px] space-x-10">
         <span>For Schools </span>
         <span>For Teacher</span>
       </ul>
