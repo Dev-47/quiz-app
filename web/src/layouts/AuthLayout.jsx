@@ -1,51 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import BaseLayout from "./BaseLayout";
+import { useEffect, useState } from "react";
 
-export default function AuthLayout({ children, pgtitle, onSubmit }) {
-  // content to show in the login page
-  const loginCont = (
-    <>
-      <p>
-        Don't have an account?
-        <span className="text-blue-600">
-          &nbsp;
-          <Link to="/sign-up">Sign Up here</Link>
-        </span>
-      </p>
-      <p>
-        Forgot your password?
-        <span className="text-blue-600">
-          &nbsp;
-          <Link to="/reset-password">Reset Password</Link>
-        </span>
-      </p>
-    </>
-  );
+import Nav from "../components/baselayout/Nav";
+import Footer from "../components/baselayout/Footer";
 
-  // content to show in the signup page
-  const signupCont = (
-    <p>
-      Already have an account?{" "}
-      <span className="text-blue-600">
-        <Link to="/sign-in">Login Here</Link>
-      </span>
-    </p>
-  );
-
+export default function AuthLayout({ children, pgtitle, onSubmit, navBtn }) {
   // array of content to show in the auth pages
   const extra = [
     {
       title: "Login",
-      cont: loginCont,
+      cont: "Login with your email and password below",
     },
     {
       title: "Sign Up",
-      cont: signupCont,
+      cont: null,
     },
     {
       title: "Reset Password",
-      cont: null,
+      cont: "enter your email below to reset your password",
     },
   ];
 
@@ -61,30 +32,28 @@ export default function AuthLayout({ children, pgtitle, onSubmit }) {
       });
   }, []);
 
-  // prevent the default action of the form
-  const preventDefault = (e) => {
-    e.preventDefault();
-  };
-
   // react default return
   return (
-    <BaseLayout>
-      <div className="text-white grid w-full body-font">
-        <h2 className="sm:col-span-2 grid place-content-center text-2xl font-bold underline decoration-2 m-4">
-          {pgtitle}
-        </h2>
+    <div>
+      <Nav content={navBtn} />
+      <div className="bg-[#fffaf2] h-screen p-4">
+        <div className="text-black grid max-w-md shadow-md bg-white my-0 mx-auto">
+          <h2 className="grid place-content-center text-center font-light text-4xl text-[#026294] m-4">
+            Welcome To Dev 47 Quiz
+          </h2>
+          <p className="text-center">{item.cont}</p>
 
-        <div className="w-full">
-          <form className="auth-form" onSubmit={onSubmit}>
-            {children}
-            <button className="auth-btn">{pgtitle}</button>
-          </form>
-        </div>
-
-        <div className="flex flex-col place-content-center place-items-start text-2xl">
-          {item.cont}
+          <div className="">
+            <form className="auth-form" onSubmit={onSubmit}>
+              {children}
+              <button className="auth-btn bg-[#026294] text-white ">
+                {pgtitle}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </BaseLayout>
+      <Footer />
+    </div>
   );
 }

@@ -12,7 +12,7 @@ export default function Router() {
   return (
     <Routes>
       {/* error page */}
-      <Route path="*" element={<ErrorPage />} />
+      <Route path="*" element={<Error404 />} />
 
       {/* index page */}
       <Route path="/" element={<Index />} />
@@ -20,7 +20,11 @@ export default function Router() {
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/reset-password" element={<ResetPassword />} />
-      <Route path="/quiz-result" element={<QuizResult />} />
+      {/* account */}
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/profile" element={<Profile />} />
+      {/* quiz */}
+      <Route path="/start-quiz" element={<StartQuiz />} />
     </Routes>
     
   );

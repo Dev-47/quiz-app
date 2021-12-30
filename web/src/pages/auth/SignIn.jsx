@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-
 import { loginUser } from "../../store/actions/auth";
+
+import AuthLayout from "../../layouts/AuthLayout";
+import InputGroup from "../../components/auth/InputGroup";
 
 function SignIn({ loginUser }) {
   const [username, set_username] = useState("");
@@ -11,32 +14,32 @@ function SignIn({ loginUser }) {
     loginUser({ username, password });
   };
 
-  return (
-    <div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          __login_user(username, password);
-        }}
-      >
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => {
-            set_username(e.target.value);
-          }}
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => {
-            set_password(e.target.value);
-          }}
-        />
+  // page title
+  document.title = "Login - Quiz App";
 
-        <button>Login</button>
-      </form>
-    </div>
+  return (
+    <AuthLayout
+      pgtitle="Login"
+      navBtn="Sign Up"
+      onSubmit={(e) => {
+        e.preventDefault();
+        __login_user(username, password);
+      }}
+    >
+      <InputGroup
+        type="text"
+        contenttitle="Username"
+        onChange={(e) => set_username(e.target.value)}
+      />
+      <InputGroup
+        type="password"
+        contenttitle="Password"
+        onChange={(e) => set_password(e.target.value)}
+      />
+      <p className="float-right py-3 px-2">
+        <Link to="/reset-password">Forgot Password?</Link>
+      </p>
+    </AuthLayout>
   );
 }
 

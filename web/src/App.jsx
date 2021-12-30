@@ -1,7 +1,5 @@
 import React from "react";
-
 import "./assets/scss/style.scss";
-
 import Router from "./router";
 import store from "./store";
 
