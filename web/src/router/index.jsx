@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Index from "../pages/Index";
@@ -6,7 +5,6 @@ import SignIn from "../pages/auth/SignIn";
 import SignUp from "../pages/auth/SignUp";
 import ResetPassword from "../pages/auth/ResetPassword";
 import Dashboard from "../pages/account/Dashboard";
-import Profile from "../pages/account/Profile";
 import StartQuiz from "../pages/quiz/StartQuiz";
 import QuizList from "../pages/quiz/QuizList";
 import Result from "../pages/quiz/Result";
