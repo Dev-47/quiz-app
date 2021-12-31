@@ -20,7 +20,7 @@ urlpatterns = [
     path("quiz/<uuid:uuid>/delete/", QuizDeleteAPI.as_view(), name="delete"),
     path("quiz/<uuid:uuid>/update/", QuizUpdateAPI.as_view(), name="update"),
     path(
-        "quiz/add-question/<uuid:uuid>/", AddQuestionAPI.as_view(), name="add-question"
+        "quiz/<uuid:uuid>/add-question/", AddQuestionAPI.as_view(), name="add-question"
     ),
     path("quiz/<uuid:uuid>/submit/", UserSubmitQuizAPI.as_view(), name="submit"),
 ]
