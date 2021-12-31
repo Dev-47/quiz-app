@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import BaseLayout from "../../layouts/BaseLayout";
-import { no_questions, time_limit, convertTime} from "../../store/quiz/store";
+import { no_questions, time_limit, convertTime } from "../../store/quiz/store";
 
 export default function StartQuiz() {
   const { uuid } = useParams();
