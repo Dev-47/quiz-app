@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function ErrorPage() {
+export default function Error404() {
   return (
     <div className="flex place-content-center place-items-center text-red-600 text-xl border-4 border-red-50">
       this page doesn't exit on this domain <br />

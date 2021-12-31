@@ -5,17 +5,22 @@ import Index from "../pages/Index";
 import SignIn from "../pages/auth/SignIn";
 import SignUp from "../pages/auth/SignUp";
 import ResetPassword from "../pages/auth/ResetPassword";
-import ErrorPage from "../pages/error/ErrorPage";
 import Dashboard from "../pages/account/Dashboard";
 import Profile from "../pages/account/Profile";
 import StartQuiz from "../pages/quiz/StartQuiz";
 import Preveiw from "../pages/Preveiw";
 
+// error pages
+
+// import ErrorPage from "../pages/error/ErrorPage";
+import Error404 from "../pages/error/Error404";
+import QuizList from "../pages/quiz/QuizList";
+
 export default function Router() {
   return (
     <Routes>
       {/* error page */}
-      <Route path="*" element={<ErrorPage />} />
+      <Route path="*" element={<Error404 />} />
 
       {/* index page */}
       <Route path="/" element={<Index />} />
@@ -28,6 +33,8 @@ export default function Router() {
       <Route path="/profile" element={<Profile />} />
       {/* quiz */}
       <Route path="/start-quiz" element={<StartQuiz />} />
+      <Route path="/quiz/list" element={<QuizList />} />
+      <Route path="/quiz/:uuid/start" element={<StartQuiz />} />
       {/* preview route for frontend development purpose */}
       <Route path="/preview" element={<Preveiw />} />
     </Routes>
