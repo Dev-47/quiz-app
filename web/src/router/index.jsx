@@ -36,6 +36,5 @@ export default function Router() {
       <Route path="/quiz/:uuid/start" element={<StartQuiz />} />
       <Route path="/quiz/:uuid/result" element={<Result />} />
     </Routes>
-    
   );
 }
