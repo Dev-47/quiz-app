@@ -22,7 +22,6 @@ input[type="file"] {
 .dashboard-form {
   display: flex;
 
-
   & > * {
     padding: 0.5rem;
   }
@@ -32,7 +31,8 @@ input[type="file"] {
     border: none;
     background-color: #ccc;
 
-    &:focus, &:active {
+    &:focus,
+    &:active {
       outline: none;
       border: none;
     }
@@ -44,6 +44,4 @@ input[type="file"] {
     width: 8rem;
     // @extend .debug;
   }
-
-
 }
