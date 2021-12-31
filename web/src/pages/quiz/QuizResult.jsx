@@ -1,9 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 
 import BaseLayout from "../../layouts/BaseLayout";
-import congrats from "../../assets/images/congratulations.png";
+import congrats_img from "../../assets/images/congratulations.png";
 
-export default function Result() {
+export default function QuizResult() {
   const { uuid } = useParams();
 
   // page title
@@ -13,7 +13,7 @@ export default function Result() {
     <BaseLayout>
       <div className="text-black flex flex-col place-items-center place-content-center space-y-3">
         <img
-          src={congrats}
+          src={congrats_img}
           alt="congratulatory picture"
           className="w-[40rem] sm:h-[30rem]"
         />

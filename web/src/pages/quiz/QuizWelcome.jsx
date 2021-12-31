@@ -3,18 +3,17 @@ import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 
 import BaseLayout from "../../layouts/BaseLayout";
-import { convertTime } from "../../store/utils";
 import { getQuiz } from "../../store/actions/quiz";
 
-function StartQuiz({ getQuiz, quiz }) {
+function QuizWelcome({ getQuiz, quiz }) {
   const { uuid } = useParams();
 
   useEffect(() => {
     getQuiz(uuid);
+    // page title
+    document.title = `Welcome to ${quiz.title}`;
   }, []);
 
-  // page title
-  document.title = "Start Quiz - Quiz App";
   return (
     <BaseLayout>
       {quiz && (
@@ -55,4 +54,4 @@ const mapStateToProps = (state) => ({
   quiz: state.quiz.quiz,
 });
 
-export default connect(mapStateToProps, { getQuiz })(StartQuiz);
+export default connect(mapStateToProps, { getQuiz })(QuizWelcome);

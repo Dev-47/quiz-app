@@ -7,9 +7,9 @@ import SignUp from "../pages/auth/SignUp";
 import ResetPassword from "../pages/auth/ResetPassword";
 import Dashboard from "../pages/account/Dashboard";
 import Profile from "../pages/account/Profile";
-import StartQuiz from "../pages/quiz/StartQuiz";
+import QuizWelcome from "../pages/quiz/QuizWelcome";
 import QuizList from "../pages/quiz/QuizList";
-import Result from "../pages/quiz/Result";
+import QuizResult from "../pages/quiz/QuizResult";
 
 // error pages
 
@@ -33,8 +33,8 @@ export default function Router() {
       <Route path="/profile" element={<Profile />} />
       {/* quiz */}
       <Route path="/quiz/list" element={<QuizList />} />
-      <Route path="/quiz/:uuid/start" element={<StartQuiz />} />
-      <Route path="/quiz/:uuid/result" element={<Result />} />
+      <Route path="/quiz/:uuid/welcome" element={<QuizWelcome />} />
+      <Route path="/quiz/:uuid/result" element={<QuizResult />} />
     </Routes>
   );
 }
