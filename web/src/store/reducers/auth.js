@@ -19,3 +19,12 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+
+const user = [
+  {
+    first_name: "dev",
+    last_name: "47",
+    email: "dev47@gmail.com",
+    username: "dev47",
+  },
+];

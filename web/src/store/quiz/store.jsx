@@ -61,3 +61,7 @@ export function quiz_title() {
 export function quiz_picture() {
   return "https://via.placeholder.com/100";
 }
+
+export function profile_pic() {
+  return "https://via.placeholder.com/150";
+}

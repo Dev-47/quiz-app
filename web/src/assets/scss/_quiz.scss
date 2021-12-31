@@ -14,3 +14,36 @@
   margin-bottom: 1rem;
   text-align: center;
 }
+
+input[type="file"] {
+  display: none;
+}
+
+.dashboard-form {
+  display: flex;
+
+
+  & > * {
+    padding: 0.5rem;
+  }
+
+  & > input {
+    justify-content: end;
+    border: none;
+    background-color: #ccc;
+
+    &:focus, &:active {
+      outline: none;
+      border: none;
+    }
+  }
+
+  label {
+    justify-content: start;
+    margin-right: 0.5rem;
+    width: 8rem;
+    // @extend .debug;
+  }
+
+
+}
