@@ -7,28 +7,40 @@ import uuid
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('quiz', '0004_option_created_option_updated_alter_option_id_and_more'),
+        ("quiz", "0004_option_created_option_updated_alter_option_id_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='option',
-            name='id',
-            field=models.UUIDField(default=uuid.UUID('72f0969e-4ede-44db-b90c-798053bbc8c7'), primary_key=True, serialize=False),
+            model_name="option",
+            name="id",
+            field=models.UUIDField(
+                default=uuid.UUID("72f0969e-4ede-44db-b90c-798053bbc8c7"),
+                primary_key=True,
+                serialize=False,
+            ),
         ),
         migrations.AlterField(
-            model_name='option',
-            name='text',
+            model_name="option",
+            name="text",
             field=models.TextField(),
         ),
         migrations.AlterField(
-            model_name='question',
-            name='id',
-            field=models.UUIDField(default=uuid.UUID('72f0969e-4ede-44db-b90c-798053bbc8c7'), primary_key=True, serialize=False),
+            model_name="question",
+            name="id",
+            field=models.UUIDField(
+                default=uuid.UUID("72f0969e-4ede-44db-b90c-798053bbc8c7"),
+                primary_key=True,
+                serialize=False,
+            ),
         ),
         migrations.AlterField(
-            model_name='quiz',
-            name='id',
-            field=models.UUIDField(default=uuid.UUID('72f0969e-4ede-44db-b90c-798053bbc8c7'), primary_key=True, serialize=False),
+            model_name="quiz",
+            name="id",
+            field=models.UUIDField(
+                default=uuid.UUID("72f0969e-4ede-44db-b90c-798053bbc8c7"),
+                primary_key=True,
+                serialize=False,
+            ),
         ),
     ]

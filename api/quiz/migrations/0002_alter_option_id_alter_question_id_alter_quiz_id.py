@@ -7,23 +7,35 @@ import uuid
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('quiz', '0001_initial'),
+        ("quiz", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='option',
-            name='id',
-            field=models.UUIDField(default=uuid.UUID('36e33ff5-8416-4e3c-988f-f9405767190c'), primary_key=True, serialize=False),
+            model_name="option",
+            name="id",
+            field=models.UUIDField(
+                default=uuid.UUID("36e33ff5-8416-4e3c-988f-f9405767190c"),
+                primary_key=True,
+                serialize=False,
+            ),
         ),
         migrations.AlterField(
-            model_name='question',
-            name='id',
-            field=models.UUIDField(default=uuid.UUID('36e33ff5-8416-4e3c-988f-f9405767190c'), primary_key=True, serialize=False),
+            model_name="question",
+            name="id",
+            field=models.UUIDField(
+                default=uuid.UUID("36e33ff5-8416-4e3c-988f-f9405767190c"),
+                primary_key=True,
+                serialize=False,
+            ),
         ),
         migrations.AlterField(
-            model_name='quiz',
-            name='id',
-            field=models.UUIDField(default=uuid.UUID('36e33ff5-8416-4e3c-988f-f9405767190c'), primary_key=True, serialize=False),
+            model_name="quiz",
+            name="id",
+            field=models.UUIDField(
+                default=uuid.UUID("36e33ff5-8416-4e3c-988f-f9405767190c"),
+                primary_key=True,
+                serialize=False,
+            ),
         ),
     ]
