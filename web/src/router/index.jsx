@@ -30,7 +30,6 @@ export default function Router() {
       <Route path="/reset-password" element={<ResetPassword />} />
       {/* account */}
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/profile" element={<Profile />} />
       {/* quiz */}
       <Route path="/quiz/list" element={<QuizList />} />
       <Route path="/quiz/:uuid/start" element={<StartQuiz />} />
