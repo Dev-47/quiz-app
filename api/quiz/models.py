@@ -33,8 +33,26 @@ class Quiz(BaseModel):
 
         return __question
 
-    def mark_quiz_user(self, user, questions):
-        return {"score": "40%", "summary": "4 out 10"}
+    def mark_quiz_user(self, user, data):
+        question_uuids = [question_uuid["question_uuid"] for question_uuid in data]
+        answers = [answer["answer"] for answer in data]
+
+        zipped_data = zip(question_uuids, answers)
+
+        points = 0
+        no_of_questions = len(data)
+
+        for uuid, answer in zipped_data:
+            question = Question.objects.get(id=uuid)
+            if str(question.answer) == str(answer):
+                points += 1
+            else:
+                if self.enable_negative_marking:
+                    points -= 1
+
+        score = (points / no_of_questions) * 100
+
+        return {"score": score, "summary": f"{points} out {no_of_questions}"}
 
     @property
     def questions(self):
