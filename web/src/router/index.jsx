@@ -8,12 +8,13 @@ import ResetPassword from "../pages/auth/ResetPassword";
 import Dashboard from "../pages/account/Dashboard";
 import Profile from "../pages/account/Profile";
 import StartQuiz from "../pages/quiz/StartQuiz";
+import QuizList from "../pages/quiz/QuizList";
+import Result from "../pages/quiz/Result";
 
 // error pages
 
 // import ErrorPage from "../pages/error/ErrorPage";
 import Error404 from "../pages/error/Error404";
-import QuizList from "../pages/quiz/QuizList";
 
 export default function Router() {
   return (
@@ -33,6 +34,8 @@ export default function Router() {
       {/* quiz */}
       <Route path="/quiz/list" element={<QuizList />} />
       <Route path="/quiz/:uuid/start" element={<StartQuiz />} />
+      <Route path="/quiz/:uuid/result" element={<Result />} />
     </Routes>
+    
   );
 }

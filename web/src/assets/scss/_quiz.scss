@@ -3,3 +3,14 @@
 .quiz-btn {
   @include btn(2rem 0, none);
 }
+
+.congrats{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.score {
+  margin-bottom: 1rem;
+  text-align: center;
+}
