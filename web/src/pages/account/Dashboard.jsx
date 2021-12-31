@@ -1,3 +1,9 @@
+import BaseLayout from "../../layouts/BaseLayout";
+
 export default function Dashboard() {
-  return <div>this is page for the dashboard</div>;
+  return (
+    <BaseLayout>
+      <main className="text-black">this is page for the dashboard</main>
+    </BaseLayout>
+  );
 }

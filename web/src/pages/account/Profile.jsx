@@ -1,3 +1,9 @@
+import BaseLayout from "../../layouts/BaseLayout";
+
 export default function Profile() {
-  return <div>this is the profile page</div>;
+  return (
+    <BaseLayout>
+      <div>this is the profile page</div>
+    </BaseLayout>
+  );
 }
