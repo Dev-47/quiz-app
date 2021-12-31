@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 
 import BaseLayout from "../../layouts/BaseLayout";
 import congrats from "../../assets/images/congratulations.png";
+import { no_questions } from "../../store/quiz/store";
 
 export default function Result() {
   const { uuid } = useParams();
@@ -18,7 +19,7 @@ export default function Result() {
           className="w-[40rem] sm:h-[30rem]"
         />
         <h3 className="congrats">Congratulations</h3>
-        <h4 className="score">Your Score: 08 / 10</h4>
+        <h4 className="score">Your Score: 08 / {no_questions()}</h4>
         <button className="quiz-btn">
           <Link to="/dashboard">Go Home</Link>
         </button>
