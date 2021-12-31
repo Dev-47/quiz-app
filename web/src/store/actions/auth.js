@@ -14,10 +14,6 @@ export const loginUser = (user_creds) => async (dispatch) => {
       });
     })
     .catch((err) => {
-      // dispatch({
-      //   action: SET_ERROR,
-      //   payload: err.response.data
-      // })
       console.log(err);
     });
 };
