@@ -46,6 +46,7 @@ wcwidth = "==0.2.5"
 drf-yasg = "*"
 black = "*"
 django-heroku = "*"
+gunicorn = "*"
 
 [dev-packages]
 
