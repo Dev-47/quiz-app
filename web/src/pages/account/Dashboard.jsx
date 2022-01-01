@@ -3,15 +3,6 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import BaseLayout from "../../layouts/BaseLayout";
-<<<<<<< HEAD
-import { profile_pic } from "../../store/quiz/store";
-
-export default function Dashboard() {
-  let average = 56;
-  let total_quiz = 10;
-  let quiz_completed = 0;
-
-=======
 import { getQuizList } from "../../store/actions/quiz";
 import quiz_img from "../../assets/images/quiz-img.jpg";
 
@@ -25,18 +16,13 @@ function Dashboard({ getQuizList, quiz_list }) {
   let quiz_completed = 0;
 
   document.title = "Dashboard -  Quiz App";
->>>>>>> 0e4dc69609a2ead570e4d13912a022db827c2dc0
   return (
     <BaseLayout>
       <main className="text-black flex flex-col bg-[#fffaf2] place-content-center place-items-center">
         <div className="flex flex-col sm:flex-row-reverse place-items-center place-content-center justify-between">
           <section className="relative my-4">
             <img
-<<<<<<< HEAD
-              src={profile_pic()}
-=======
               src={quiz_img}
->>>>>>> 0e4dc69609a2ead570e4d13912a022db827c2dc0
               alt="profile image"
               className="rounded-full w-44 h-44"
             />
@@ -45,11 +31,7 @@ function Dashboard({ getQuizList, quiz_list }) {
                 htmlFor="profile-picture"
                 className="rounded-full shadow-md bg-[#eeeeee] p-3 cursor-pointer transition duration-500 hover:bg-[#d3d3d3]"
               >
-<<<<<<< HEAD
-                <i class="fas fa-pencil-alt"></i>
-=======
                 <i className="fas fa-pencil-alt"></i>
->>>>>>> 0e4dc69609a2ead570e4d13912a022db827c2dc0
               </label>
               <input
                 type="file"
@@ -88,15 +70,12 @@ function Dashboard({ getQuizList, quiz_list }) {
             </div>
           </section>
         </div>
-<<<<<<< HEAD
-=======
         <section className="pt-6">
           Do you want to create a Quiz?{" "}
           <Link to="/quiz/create">
             <span className="quiz-btn">Click here</span>
           </Link>
         </section>
->>>>>>> 0e4dc69609a2ead570e4d13912a022db827c2dc0
         <div className="flex sm:flex-row place-items-center place-content-center w-full px-10 py-14 space-x-8">
           <div className="flex flex-col bg-white shadow-md space-y-8 p-4">
             <div>
@@ -113,8 +92,6 @@ function Dashboard({ getQuizList, quiz_list }) {
               <span className="font-bold text-lg">quiz attempted :</span>{" "}
               {quiz_completed}
             </h3>
-<<<<<<< HEAD
-=======
             {quiz_list &&
               quiz_list.map((quiz) => (
                 <Link
@@ -127,7 +104,6 @@ function Dashboard({ getQuizList, quiz_list }) {
                   </button>
                 </Link>
               ))}
->>>>>>> 0e4dc69609a2ead570e4d13912a022db827c2dc0
           </div>
         </div>
       </main>
