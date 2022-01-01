@@ -10,7 +10,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case AUTH_LOGIN:
-      storage.set("token", action.payload);
+      storage.set("token", action.payload.token);
       return {
         ...state,
         is_authenticated: true,
