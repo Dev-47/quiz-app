@@ -3,12 +3,16 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
 from quiz.models import Quiz
-from quiz.serializers import QuestionSerializer, QuizSerializer
+from quiz.serializers import (
+    QuestionSerializer,
+    QuizSerializer,
+    SubmitQuestionSerializer,
+)
 
 
 class QuizCreateAPI(View):
 
-    permission_class = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     serializer_class = QuizSerializer
 
     def post(self, request):
@@ -23,7 +27,7 @@ class QuizCreateAPI(View):
 
 class QuizUpdateAPI(View):
 
-    permission_class = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     serializer_class = QuizSerializer
 
     def post(self, request, uuid):
@@ -54,7 +58,6 @@ class QuizDetailsAPI(View):
 
     def get(self, request, uuid):
         quiz = get_object_or_404(Quiz, id=uuid)
-
         quiz_serializer = self.get_serializer(quiz)
 
         return Response(quiz_serializer.data)
@@ -62,7 +65,7 @@ class QuizDetailsAPI(View):
 
 class QuizDeleteAPI(View):
 
-    permission_class = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, uuid):
         quiz = get_object_or_404(Quiz, id=uuid)
@@ -73,7 +76,7 @@ class QuizDeleteAPI(View):
 
 class AddQuestionAPI(View):
 
-    permission_class = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     serializer_class = QuestionSerializer
 
     def post(self, request, uuid):
@@ -85,3 +88,19 @@ class AddQuestionAPI(View):
         question_add_serializer.save(quiz=quiz)
 
         return Response(question_add_serializer.data)
+
+
+class UserSubmitQuizAPI(View):
+
+    serializer_class = SubmitQuestionSerializer
+
+    def post(self, request, uuid):
+        quiz = get_object_or_404(Quiz, id=uuid)
+
+        questions_data = request.data
+        questions_serializer = self.get_serializer(data=questions_data, many=True)
+        questions_serializer.is_valid(raise_exception=True)
+
+        results = quiz.mark_quiz_user(request.user, questions_serializer.validated_data)
+
+        return Response(results)
