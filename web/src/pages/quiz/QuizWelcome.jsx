@@ -1,12 +1,11 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import BaseLayout from "../../layouts/BaseLayout";
-import { convertTime } from "../../store/utils";
 import { getQuiz } from "../../store/actions/quiz";
 
-function StartQuiz({ getQuiz, quiz }) {
+function QuizWelcome({ getQuiz, quiz }) {
   const { uuid } = useParams();
 
   useEffect(() => {
@@ -14,7 +13,8 @@ function StartQuiz({ getQuiz, quiz }) {
   }, []);
 
   // page title
-  document.title = "Start Quiz - Quiz App";
+  document.title = `Welcome to ${quiz?.title}`;
+
   return (
     <BaseLayout>
       {quiz && (
@@ -44,7 +44,9 @@ function StartQuiz({ getQuiz, quiz }) {
               <li>Tap on bookmark icon to save interesting questions</li>
             </ol>
           </main>
-          <button className="quiz-btn">Click to start the quiz</button>
+          <Link to={`/quiz/${uuid}/start`}>
+            <button className="quiz-btn">Click to start the quiz</button>
+          </Link>
         </div>
       )}
     </BaseLayout>
@@ -55,4 +57,4 @@ const mapStateToProps = (state) => ({
   quiz: state.quiz.quiz,
 });
 
-export default connect(mapStateToProps, { getQuiz })(StartQuiz);
+export default connect(mapStateToProps, { getQuiz })(QuizWelcome);

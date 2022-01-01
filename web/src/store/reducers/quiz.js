@@ -1,8 +1,9 @@
-import { GET_QUIZ, GET_QUIZ_LIST } from "../types";
+import { GET_QUIZ, GET_QUIZ_LIST, SUBMIT_QUIZ } from "../types";
 
 const initialState = {
   quiz_list: [],
   quiz: null,
+  quiz_result: null,
 };
 
 export default (state = initialState, action) => {
@@ -16,6 +17,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         quiz: action.payload,
+      };
+    case SUBMIT_QUIZ:
+      return {
+        ...state,
+        quiz_result: action.payload,
       };
     default:
       return state;

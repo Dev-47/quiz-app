@@ -6,3 +6,4 @@ export const SET_LOADING = "SET_LOADING";
 
 export const GET_QUIZ_LIST = "GET_QUIZ_LIST";
 export const GET_QUIZ = "GET_QUIZ";
+export const SUBMIT_QUIZ = "SUBMIT_QUIZ";
