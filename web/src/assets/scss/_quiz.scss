@@ -4,6 +4,16 @@
   @include btn(2rem 0, none);
 }
 
+.blue-quiz-btn {
+  @include btn(0.68rem 0.5rem, $default-color);
+  width: 100%;
+}
+
+.blue-plus-btn {
+  @include btn(0.48rem, $default-color);
+  width: 100%;
+}
+
 .congrats {
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -45,3 +55,20 @@ input[type="file"] {
     // @extend .debug;
   }
 }
+<<<<<<< HEAD
+=======
+
+.form-control-enter {
+  outline: 1px solid #026294;
+  border-radius: 0.5rem;
+  margin: 0;
+  width: 100%;
+  transition: $default-transition;
+
+  &:focus,
+  &:active,
+  &:hover {
+    @apply ring-[#026294];
+  }
+}
+>>>>>>> 0e4dc69609a2ead570e4d13912a022db827c2dc0

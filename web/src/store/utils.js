@@ -49,3 +49,18 @@ export class Storage {
     localStorage.removeItem(key);
   }
 }
+
+// function to convert {item.time} to hours and minutes
+export const convertTime = (time) => {
+  // convert time to hours and minutes
+  let hours = Math.floor(time / 60);
+  let minutes = time % 60;
+  // return the time in hours and minutes
+  if (hours === 0) {
+    return `${minutes} minutes`;
+  } else if (minutes === 0) {
+    return `${hours} hour(s)`;
+  } else {
+    return `${hours} hours ${minutes} minutes`;
+  }
+};

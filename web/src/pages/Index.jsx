@@ -19,7 +19,7 @@ export default function Index() {
             Create Quiz for Users to Answer
           </h3>
           <button className="btn-blue m-9">
-            <Link to="/sign-up">Get Started</Link>
+            <Link to="/dashboard">Get Started</Link>
           </button>
           <button className="btn-white">
             <Link to="/sign-in">Log in</Link>
