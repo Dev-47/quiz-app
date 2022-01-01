@@ -11,7 +11,7 @@ export default function QuizItem({ quiz }) {
       <div className="flex flex-col justify-between">
         <h4 className="p-3 font-extrabold text-lg">{quiz.title}</h4>
         <span className="pl-3">
-          <Link to={`/quiz/${uuid}/start`}>view details</Link>
+          <Link to={`/quiz/${uuid}/welcome`}>view details</Link>
         </span>
       </div>
     </section>

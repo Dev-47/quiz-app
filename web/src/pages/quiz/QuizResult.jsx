@@ -1,10 +1,10 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 
 import BaseLayout from "../../layouts/BaseLayout";
 import congrats_img from "../../assets/images/congratulations.png";
 
 export default function QuizResult() {
-  const { uuid } = useParams();
+  const { score, summary } = useLocation().state;
 
   // page title
   document.title = "Result - Quiz App";
@@ -18,7 +18,9 @@ export default function QuizResult() {
           className="w-[40rem] sm:h-[30rem]"
         />
         <h3 className="congrats">Congratulations</h3>
-        <h4 className="score">Your Score: 08 / {10}</h4>
+        <h4 className="score">
+          Your Score({score}): {summary}
+        </h4>
         <button className="quiz-btn">
           <Link to="/dashboard">Go Home</Link>
         </button>

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import BaseLayout from "../../layouts/BaseLayout";
@@ -10,9 +10,10 @@ function QuizWelcome({ getQuiz, quiz }) {
 
   useEffect(() => {
     getQuiz(uuid);
-    // page title
-    document.title = `Welcome to ${quiz.title}`;
   }, []);
+
+  // page title
+  document.title = `Welcome to ${quiz?.title}`;
 
   return (
     <BaseLayout>
@@ -43,7 +44,9 @@ function QuizWelcome({ getQuiz, quiz }) {
               <li>Tap on bookmark icon to save interesting questions</li>
             </ol>
           </main>
-          <button className="quiz-btn">Click to start the quiz</button>
+          <Link to={`/quiz/${uuid}/start`}>
+            <button className="quiz-btn">Click to start the quiz</button>
+          </Link>
         </div>
       )}
     </BaseLayout>
