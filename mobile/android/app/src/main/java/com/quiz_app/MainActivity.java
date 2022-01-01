@@ -2,6 +2,8 @@ package com.quiz_app;
 
 import com.facebook.react.ReactActivity;
 
+import android.os.Bundle;
+
 public class MainActivity extends ReactActivity {
 
   /**
@@ -12,4 +14,10 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "quiz_app";
   }
+
+  @Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
 }
+}
+
