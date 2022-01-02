@@ -1,12 +1,15 @@
-import { SET_LOADING } from "../types";
+import { SET_ERROR, SET_LOADING } from "../types";
 
-const setLoading = (status) => (dispatch) => {
+export const setLoading = (status) => (dispatch) => {
   dispatch({
     type: SET_LOADING,
     payload: status,
   });
 };
 
-export default {
-  setLoading,
+export const setError = (error) => (dispatch) => {
+  dispatch({
+    type: SET_ERROR,
+    payload: error,
+  });
 };
