@@ -23,7 +23,8 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="IntroPage"
-        screenOptions={{headerShown: false}}>
+        screenOptions={{headerShown: false}}
+      >
         {/* <View style={styles.container}> */}
         {/* <IntroPage /> */}
         {/* <LogInRegister /> */}

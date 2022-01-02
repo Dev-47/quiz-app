@@ -36,7 +36,8 @@ function LoginPage({navigation}) {
 
           <TouchableOpacity
             style={styles.forgetPass}
-            onPress={() => navigation.navigate('ResetPassPage')}>
+            onPress={() => navigation.navigate('ResetPassPage')}
+          >
             <Text style={styles.text}>Forget Password?</Text>
           </TouchableOpacity>
 
@@ -44,7 +45,8 @@ function LoginPage({navigation}) {
             style={[
               styles.textInput,
               {backgroundColor: 'blue', alignItems: 'center'},
-            ]}>
+            ]}
+          >
             <Text style={[styles.text, {color: '#fff'}]}>Login</Text>
           </TouchableOpacity>
         </View>
@@ -55,7 +57,8 @@ function LoginPage({navigation}) {
             {/* <TouchableOpacity style={{marginTop: 10}}> */}
             <Text
               style={[styles.text, {color: 'blue', textTransform: 'uppercase'}]}
-              onPress={() => navigation.navigate('RegisterPage')}>
+              onPress={() => navigation.navigate('RegisterPage')}
+            >
               {' '}
               Register Now.
             </Text>
