@@ -24,14 +24,16 @@ function LogInRegister({navigation}) {
         {/* Login Button */}
         <TouchableOpacity
           style={[styles.btn, {backgroundColor: 'blue'}]}
-          onPress={() => navigation.navigate('LoginPage')}>
+          onPress={() => navigation.navigate('LoginPage')}
+        >
           <Text style={{color: '#fff'}}>Login</Text>
         </TouchableOpacity>
 
         {/* Register Button */}
         <TouchableOpacity
           style={[styles.btn, {backgroundColor: '#fff'}]}
-          onPress={() => navigation.navigate('RegisterPage')}>
+          onPress={() => navigation.navigate('RegisterPage')}
+        >
           <Text style={{color: 'blue'}}>Register</Text>
         </TouchableOpacity>
       </View>

@@ -27,7 +27,8 @@ function RegisterPage({navigation}) {
           {/* Teacher */}
           <TouchableOpacity
             style={[styles.btn, {backgroundColor: person ? null : 'blue'}]}
-            onPress={handlePress}>
+            onPress={handlePress}
+          >
             <Text style={{color: person ? '#000' : '#fff', fontSize: 16}}>
               Teacher
             </Text>
@@ -36,7 +37,8 @@ function RegisterPage({navigation}) {
           {/* Student */}
           <TouchableOpacity
             style={[styles.btn, {backgroundColor: person ? 'blue' : null}]}
-            onPress={handlePress}>
+            onPress={handlePress}
+          >
             <Text style={{color: person ? '#fff' : '#000', fontSize: 16}}>
               Student
             </Text>
@@ -63,7 +65,8 @@ function RegisterPage({navigation}) {
             styles.textInput,
             styles.btn,
             {backgroundColor: 'blue', alignItems: 'center'},
-          ]}>
+          ]}
+        >
           <Text style={[styles.text, {color: '#fff'}]}>Login</Text>
         </TouchableOpacity>
       </View>

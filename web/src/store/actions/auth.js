@@ -1,5 +1,8 @@
 import { AUTH_LOGIN, AUTH_REGISTER } from "../types";
-import { api } from "../utils";
+import { api, Storage } from "../utils";
+import { setError } from "./common";
+
+const storage = new Storage();
 
 export const loginUser = (user_creds) => async (dispatch) => {
   await api({
@@ -14,7 +17,8 @@ export const loginUser = (user_creds) => async (dispatch) => {
       });
     })
     .catch((err) => {
-      console.log(err);
+      storage.remove("token");
+      dispatch(setError(err));
     });
 };
 
@@ -31,6 +35,6 @@ export const registerUser = (user_data) => async (dispatch) => {
       });
     })
     .catch((err) => {
-      console.log(err);
+      dispatch(setError(err));
     });
 };

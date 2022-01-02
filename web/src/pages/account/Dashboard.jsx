@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import BaseLayout from "../../layouts/BaseLayout";
 import { getQuizList } from "../../store/actions/quiz";
 import quiz_img from "../../assets/images/quiz-img.jpg";
+import { LOGIN_REQUIRED } from "../../router/route/protectors";
 
 function Dashboard({ getQuizList, quiz_list }) {
   useEffect(() => {
@@ -16,8 +17,9 @@ function Dashboard({ getQuizList, quiz_list }) {
   let quiz_completed = 0;
 
   document.title = "Dashboard -  Quiz App";
+
   return (
-    <BaseLayout>
+    <BaseLayout protector={LOGIN_REQUIRED} redirect_to="/sign-in">
       <main className="text-black flex flex-col bg-[#fffaf2] place-content-center place-items-center">
         <div className="flex flex-col sm:flex-row-reverse place-items-center place-content-center justify-between">
           <section className="relative my-4">

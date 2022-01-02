@@ -1,17 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { loginUser } from "../../store/actions/auth";
 
 import AuthLayout from "../../layouts/AuthLayout";
 import InputGroup from "../../components/auth/InputGroup";
+import { useEffect } from "react";
 
-function SignIn({ loginUser }) {
+function SignIn({ loginUser, is_authenticated }) {
+  const navigate = useNavigate();
+
   const [username, set_username] = useState("");
   const [password, set_password] = useState("");
 
   const __login_user = (username, password) => {
     loginUser({ username, password });
+    navigate("/dashboard");
   };
 
   // page title
@@ -43,4 +47,8 @@ function SignIn({ loginUser }) {
   );
 }
 
-export default connect(null, { loginUser })(SignIn);
+const mapStateToProps = (state) => ({
+  is_authenticated: state.auth.is_authenticated,
+});
+
+export default connect(mapStateToProps, { loginUser })(SignIn);

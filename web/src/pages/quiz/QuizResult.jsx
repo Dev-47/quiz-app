@@ -4,7 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout";
 import congrats_img from "../../assets/images/congratulations.png";
 
 export default function QuizResult() {
-  const { score, summary } = useLocation().state;
+  const { score, summary } = useLocation()?.state;
 
   // page title
   document.title = "Result - Quiz App";
