@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { connect } from "react-redux";
 
 import AuthLayout from "../../layouts/AuthLayout";
@@ -6,7 +6,7 @@ import InputGroup from "../../components/auth/InputGroup";
 import { registerUser } from "../../store/actions/auth";
 import { useNavigate } from "react-router-dom";
 
-function SignUp({ is_authenticated, registerUser }) {
+function SignUp({ registerUser }) {
   const navigate = useNavigate();
 
   // page title
