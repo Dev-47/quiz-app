@@ -15,8 +15,11 @@ function SignIn({ loginUser, is_authenticated }) {
 
   const __login_user = (username, password) => {
     loginUser({ username, password });
-    navigate("/dashboard");
   };
+
+  useEffect(() => {
+    if (is_authenticated) navigate("/dashboard");
+  });
 
   // page title
   document.title = "Login - Quiz App";
@@ -34,11 +37,13 @@ function SignIn({ loginUser, is_authenticated }) {
         type="text"
         contenttitle="Username"
         onChange={(e) => set_username(e.target.value)}
+        required
       />
       <InputGroup
         type="password"
         contenttitle="Password"
         onChange={(e) => set_password(e.target.value)}
+        required
       />
       <p className="float-right py-3 px-2">
         <Link to="/reset-password">Forgot Password?</Link>
