@@ -4,8 +4,11 @@ import { connect } from "react-redux";
 import AuthLayout from "../../layouts/AuthLayout";
 import InputGroup from "../../components/auth/InputGroup";
 import { registerUser } from "../../store/actions/auth";
+import { useNavigate } from "react-router-dom";
 
 function SignUp({ is_authenticated, registerUser }) {
+  const navigate = useNavigate();
+
   // page title
   document.title = "Sign Up - Quiz App";
 
@@ -22,11 +25,9 @@ function SignUp({ is_authenticated, registerUser }) {
   const register_user = (e) => {
     e.preventDefault();
     registerUser(user_data);
-  };
 
-  useEffect(() => {
-    if (is_authenticated) navigate("/dashboard");
-  });
+    navigate("/sign-in");
+  };
 
   return (
     <AuthLayout pgtitle="Sign Up" navBtn="Login" onSubmit={register_user}>
