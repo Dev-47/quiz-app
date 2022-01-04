@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
 import AuthLayout from "../../layouts/AuthLayout";
 import InputGroup from "../../components/auth/InputGroup";
 import { registerUser } from "../../store/actions/auth";
 
-function SignUp({ registerUser }) {
+function SignUp({ is_authenticated, registerUser }) {
   // page title
   document.title = "Sign Up - Quiz App";
 
@@ -19,17 +19,17 @@ function SignUp({ registerUser }) {
     password,
   };
 
-  registerUser(user_data);
+  const register_user = (e) => {
+    e.preventDefault();
+    registerUser(user_data);
+  };
+
+  useEffect(() => {
+    if (is_authenticated) navigate("/dashboard");
+  });
 
   return (
-    <AuthLayout
-      pgtitle="Sign Up"
-      navBtn="Login"
-      onSubmit={(e) => {
-        e.preventDefault();
-        registerUser(user_data);
-      }}
-    >
+    <AuthLayout pgtitle="Sign Up" navBtn="Login" onSubmit={register_user}>
       <InputGroup
         type="text"
         contenttitle="Username"
@@ -55,4 +55,8 @@ function SignUp({ registerUser }) {
   );
 }
 
-export default connect(null, { registerUser })(SignUp);
+const mapStateToProps = (state) => ({
+  is_authenticated: state.auth.is_authenticated,
+});
+
+export default connect(mapStateToProps, { registerUser })(SignUp);
