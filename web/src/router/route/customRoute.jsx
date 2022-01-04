@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Storage } from "../../store/utils";
 
@@ -7,7 +7,7 @@ import { LOGIN_REQUIRED } from "./protectors";
 const storage = new Storage();
 
 export function CustomRoute({ children, ...extra_props }) {
-  const is_authenticated = storage.get("token");
+  const [page_content, set_page_content] = useState(children);
 
   const { protector, redirect_to } = extra_props;
   redirect_to ? redirect_to : "/";
@@ -15,11 +15,20 @@ export function CustomRoute({ children, ...extra_props }) {
   const get_resolved = () => {
     switch (protector) {
       case LOGIN_REQUIRED:
-        return is_authenticated ? children : <Navigate to={redirect_to} />;
+        const is_authenticated = storage.get("token");
+        return is_authenticated?.length > 0 ? (
+          children
+        ) : (
+          <Navigate to={redirect_to} />
+        );
       default:
         return children;
     }
   };
 
-  return <div>{get_resolved()}</div>;
+  useEffect(() => {
+    set_page_content(get_resolved());
+  }, []);
+
+  return <div>{page_content}</div>;
 }

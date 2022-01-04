@@ -20,12 +20,12 @@ export default function InputGroup(props) {
     return (
       <div {...props} className="relative p-0 border-none">
         <input
-          type={show ? "text" : type}
+          {...props}
           className="form-control"
           id={contenttitle}
           placeholder={placeHolder}
           autoComplete="off"
-          onChange={onChange}
+          type={show ? "text" : type}
         />
         <button
           type="button"
