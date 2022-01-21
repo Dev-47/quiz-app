@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+// import { } from "../../store/reducers/auth";
+import profileImg from "../../assets/images/profile.jpg";
 
 export default function Nav(props) {
   const { content } = props;
@@ -42,7 +44,12 @@ export default function Nav(props) {
         <span>For Schools </span>
         <span>For Teacher</span>
       </ul>
-      <button className="nav-btn">{item.cont}</button>
+
+      {/* {is_authenticated ? (
+        <button className="nav-btn">{item.cont}</button>
+      ) : (
+      )} */}
+      <button className=""><img src={profileImg} alt="profile image" className="w-12 h-[2.7rem] rounded-full" /></button>
     </nav>
   );
 }
