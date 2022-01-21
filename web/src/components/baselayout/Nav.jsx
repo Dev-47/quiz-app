@@ -49,7 +49,13 @@ export default function Nav(props) {
         <button className="nav-btn">{item.cont}</button>
       ) : (
       )} */}
-      <button className=""><img src={profileImg} alt="profile image" className="w-12 h-[2.7rem] rounded-full" /></button>
+      <button className="">
+        <img
+          src={profileImg}
+          alt="profile image"
+          className="w-12 h-[2.7rem] rounded-full"
+        />
+      </button>
     </nav>
   );
 }
