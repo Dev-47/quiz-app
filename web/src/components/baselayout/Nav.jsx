@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import { } from "../../store/reducers/auth";
+import { connect } from "react-redux";
 import profileImg from "../../assets/images/profile.jpg";
 
-export default function Nav(props) {
-  const { content } = props;
+function Nav(props) {
+  const { content, is_authenticated } = props;
 
   const links = [
     {
@@ -45,13 +45,21 @@ export default function Nav(props) {
         <span>For Teacher</span>
       </ul>
 
-      <button className="">
-        <img
-          src={profileImg}
-          alt="profile image"
-          className="w-12 h-[2.7rem] rounded-full"
-        />
-      </button>
+      {is_authenticated ? 
+        <button className="">
+          <img
+            src={profileImg}
+            alt="profile image"
+            className="w-12 h-[2.7rem] rounded-full"
+          />
+        </button> : <button>{item.cont}</button>
+      }
     </nav>
   );
 }
+
+const mapStateToPros = (state) => ({
+  is_authenticated: state.auth.is_authenticated
+})
+
+export default connect(mapStateToPros)(Nav);
