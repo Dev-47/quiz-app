@@ -52,7 +52,7 @@ function Nav(props) {
             alt="profile image"
             className="w-12 h-[2.7rem] rounded-full"
           />
-        </button> : <button>{item.cont}</button>
+        </button> : <button className="nav-btn">{item.cont}</button>
       }
     </nav>
   );
