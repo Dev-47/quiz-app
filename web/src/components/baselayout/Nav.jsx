@@ -45,10 +45,6 @@ export default function Nav(props) {
         <span>For Teacher</span>
       </ul>
 
-      {/* {is_authenticated ? (
-        <button className="nav-btn">{item.cont}</button>
-      ) : (
-      )} */}
       <button className="">
         <img
           src={profileImg}
