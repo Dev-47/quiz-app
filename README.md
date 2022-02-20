@@ -1,5 +1,7 @@
 # Quiz Application
 
+![GitHub pull requests](https://img.shields.io/github/issues-pr/dev-47/quiz-app?style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues-raw/dev-47/quiz-app?style=for-the-badge)
+
 Users can create quiz questions, share the link to people who are also on the platform to answer it. Basic as that
 
 # Platform Availability
