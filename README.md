@@ -30,3 +30,11 @@ The web version is current at https://dev-47-quiz-app.netlify.app/
 Check app releases at https://github.com/Dev-47/quiz-app/releases/
 
 > Currently available for android only
+
+# Contributors
+
+<a href="https://github.com/dev-47/quiz-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=dev-47/quiz-app" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
